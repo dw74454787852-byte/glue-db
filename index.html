@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex, nofollow">
+<title>德邦胶水产品库 Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<style>
+:root{--ink:#0f172a;--ink2:#334155;--ink3:#64748b;--ink4:#94a3b8;--sf:#f8fafc;--card:#fff;--bd:#e2e8f0;--bd2:#cbd5e1;--brand:#1e40af;--bl:#3b82f6;--bbg:#eff6ff;--accent:#ea580c;--abg:#fff7ed;--green:#16a34a;--gbg:#f0fdf4;--amber:#d97706;--ambg:#fffbeb;--red:#dc2626;--purple:#7c3aed;--pbg:#f5f3ff;--sh:0 1px 3px rgba(0,0,0,.08);--shm:0 4px 12px rgba(0,0,0,.08);--r:8px;--rl:12px;--f:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:'JetBrains Mono','SF Mono',Menlo,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:15px;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--f);background:var(--sf);color:var(--ink);line-height:1.5;padding-bottom:72px;overflow-x:hidden}
+
+/* Header */
+.hd{background:var(--ink);color:#fff;padding:14px 16px;position:sticky;top:0;z-index:200;transition:padding .25s}
+.hd.mini{padding:8px 16px}
+.hd-in{max-width:1280px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between}
+.logo{font-size:1.15rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo-ic{width:28px;height:28px;background:var(--bl);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.hd-badges{display:flex;gap:8px;font-size:.75rem}
+.hb{padding:2px 10px;border-radius:20px;background:rgba(255,255,255,.12)}
+.hb b{font-weight:600}
+
+/* Search */
+.sw{background:var(--card);border-bottom:1px solid var(--bd);padding:10px 16px;position:sticky;top:48px;z-index:190;transition:top .25s,transform .3s,opacity .3s}
+.sw.col{top:38px}.sw.hid{transform:translateY(-100%);opacity:0;pointer-events:none}
+.sr{max-width:1280px;margin:0 auto;display:flex;gap:8px;align-items:center}
+.siw{flex:1;position:relative}
+.si{width:100%;padding:9px 36px 9px 14px;border:1.5px solid var(--bd);border-radius:var(--r);font-size:.9rem;font-family:var(--f);background:var(--sf);transition:border-color .2s}
+.si:focus{outline:none;border-color:var(--brand);background:#fff}
+.si::placeholder{color:var(--ink4)}
+.sc{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:none;background:var(--bd);color:var(--ink3);font-size:12px;cursor:pointer;display:none;align-items:center;justify-content:center}
+.sc.show{display:flex}
+.bai{padding:9px 16px;border-radius:var(--r);border:1.5px solid var(--brand);background:var(--bbg);color:var(--brand);font-weight:600;font-size:.8rem;cursor:pointer;white-space:nowrap;font-family:var(--f);transition:all .2s}
+.bai:hover,.bai.on{background:var(--brand);color:#fff}
+
+/* Filters */
+.fb{max-width:1280px;margin:0 auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fg{display:flex;align-items:center;gap:4px}
+.fl{font-size:.7rem;color:var(--ink4);font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-right:2px}
+.chip{padding:3px 10px;border:1px solid var(--bd);border-radius:20px;background:#fff;color:var(--ink2);font-size:.73rem;cursor:pointer;transition:all .15s;font-family:var(--f);white-space:nowrap;user-select:none}
+.chip:hover{border-color:var(--brand);color:var(--brand)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.comp{border-color:var(--purple);color:var(--purple)}
+.chip.comp.on{background:var(--purple);color:#fff;border-color:var(--purple)}
+.fsep{width:1px;height:20px;background:var(--bd);margin:0 4px}
+
+/* Toolbar */
+.tb{max-width:1280px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.rc{font-size:.8rem;color:var(--ink3)}.rc b{color:var(--ink);font-weight:600}
+.vts{display:flex;gap:4px}
+.vb{width:32px;height:32px;border:1px solid var(--bd);border-radius:6px;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:14px;transition:all .15s}
+.vb:hover{border-color:var(--ink3)}.vb.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* AI Panel */
+.aip{max-width:1280px;margin:0 auto;padding:0 16px;display:none}.aip.show{display:block}
+.aibx{background:linear-gradient(135deg,var(--bbg),#f0f4ff);border:1.5px solid #bfdbfe;border-radius:var(--rl);padding:16px;margin-bottom:12px}
+.aibx-t{font-size:.85rem;font-weight:600;color:var(--brand);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.aita{width:100%;min-height:60px;max-height:120px;padding:10px 12px;border:1px solid #bfdbfe;border-radius:var(--r);font-size:.85rem;font-family:var(--f);resize:vertical;background:#fff;color:var(--ink)}
+.aita:focus{outline:none;border-color:var(--brand)}.aita::placeholder{color:var(--ink4)}
+.aikr{display:flex;gap:8px;align-items:center;margin-top:8px}
+.aips{padding:6px 10px;border:1px solid #bfdbfe;border-radius:var(--r);font-size:.78rem;font-family:var(--f);background:#fff;cursor:pointer}
+.aiki{flex:1;padding:6px 10px;border:1px solid #bfdbfe;border-radius:var(--r);font-size:.78rem;font-family:var(--mono);background:#fff}
+.aiki:focus{outline:none;border-color:var(--brand)}
+.aiact{display:flex;gap:8px;margin-top:10px;align-items:center}
+.aisb{padding:8px 20px;border-radius:var(--r);border:none;background:var(--brand);color:#fff;font-weight:600;font-size:.82rem;cursor:pointer;font-family:var(--f);transition:background .2s}
+.aisb:hover{background:#1e3a8a}.aisb:disabled{opacity:.5;cursor:not-allowed}
+.aihn{font-size:.72rem;color:var(--ink4)}
+.aire{margin-top:12px;padding:14px;background:#fff;border-radius:var(--r);border:1px solid var(--bd);font-size:.85rem;line-height:1.7;color:var(--ink2);white-space:pre-wrap;max-height:400px;overflow-y:auto}
+.aire:empty{display:none}.aild{color:var(--brand);font-style:italic}
+
+/* Recent */
+.rs{max-width:1280px;margin:0 auto;padding:0 16px 8px}
+.rst{font-size:.78rem;font-weight:600;color:var(--ink3);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.rst .cnt{background:var(--bbg);color:var(--brand);padding:1px 8px;border-radius:10px;font-size:.7rem}
+.rscr{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rscr::-webkit-scrollbar{display:none}
+.rchip{flex:0 0 auto;padding:6px 12px;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:8px}
+.rchip:hover{border-color:var(--brand);box-shadow:var(--sh)}
+.rchip-m{font-weight:600;font-size:.82rem;color:var(--brand);white-space:nowrap}
+.rchip-t{font-size:.68rem;color:var(--ink4);white-space:nowrap}
+
+/* Grid Cards */
+.ma{max-width:1280px;margin:0 auto;padding:0 16px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.cd{background:var(--card);border-radius:var(--rl);border:1.5px solid var(--bd);padding:14px 16px;cursor:pointer;transition:all .2s;position:relative}
+.cd:hover{border-color:var(--bl);box-shadow:var(--shm);transform:translateY(-1px)}
+.cd.comp{border-color:var(--purple)}.cd.sel{border-color:var(--accent);background:var(--abg)}
+.cd-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.cd-mdl{font-size:1.05rem;font-weight:700;color:var(--brand);font-family:var(--mono);letter-spacing:-.02em}
+.cbg{font-size:.62rem;padding:2px 7px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.bg-pur{background:#dbeafe;color:#1d4ed8}.bg-ir{background:#fce7f3;color:#be185d}.bg-uv{background:var(--gbg);color:#15803d}.bg-ep{background:#fef3c7;color:#92400e}.bg-si{background:#e0e7ff;color:#4338ca}.bg-ac{background:#ede9fe;color:#6d28d9}.bg-cd{background:#ccfbf1;color:#0f766e}.bg-ot{background:#f1f5f9;color:#475569}.bg-cp{background:var(--purple);color:#fff;font-size:.6rem;margin-left:4px}
+.cd-ch{font-size:.75rem;color:var(--ink3);margin-bottom:8px}
+.cd-pr{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.pt{font-size:.7rem;padding:2px 7px;border-radius:4px;background:var(--sf);color:var(--ink2);font-family:var(--mono);font-weight:400}
+.pt.k{background:var(--bbg);color:var(--brand);font-weight:500}
+.cd-desc{font-size:.78rem;color:var(--ink3);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.3em}
+.cd-bot{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--bd)}
+.cd-comp{display:flex;gap:2px;align-items:center}
+.bdot{width:16px;height:3px;border-radius:2px;background:var(--bd)}.bdot.f{background:var(--green)}.bdot.p{background:var(--amber)}
+.cd-dt{font-size:.68rem;color:var(--ink4)}
+.cd-ck{position:absolute;bottom:12px;right:12px;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--bd);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .15s;color:transparent}
+.cd-ck:hover{border-color:var(--accent)}.cd-ck.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* List View */
+.lv{display:none}
+.lt{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh)}
+.lt th{text-align:left;padding:10px 12px;font-size:.72rem;font-weight:600;color:var(--ink3);background:var(--sf);border-bottom:2px solid var(--bd);white-space:nowrap;text-transform:uppercase;letter-spacing:.04em}
+.lt td{padding:10px 12px;font-size:.82rem;border-bottom:1px solid var(--bd);color:var(--ink2)}
+.lt tr{cursor:pointer;transition:background .1s}.lt tbody tr:hover{background:var(--bbg)}
+.lt .tm{font-weight:600;color:var(--brand);font-family:var(--mono)}.lt .tn{font-family:var(--mono);font-size:.78rem}
+
+/* Board View */
+.bv{display:none;overflow-x:auto;gap:12px;padding-bottom:12px}
+.bc{flex:0 0 260px;background:var(--sf);border-radius:var(--rl);overflow:hidden;border:1px solid var(--bd)}
+.bch{padding:10px 14px;font-size:.82rem;font-weight:600;color:var(--ink);background:var(--card);border-bottom:1px solid var(--bd);display:flex;justify-content:space-between}
+.bcc{font-size:.72rem;color:var(--ink4);font-weight:400}
+.bcb{padding:8px;display:flex;flex-direction:column;gap:6px;max-height:60vh;overflow-y:auto}
+.bi{padding:10px 12px;background:var(--card);border-radius:var(--r);border:1px solid var(--bd);cursor:pointer;transition:all .15s}
+.bi:hover{border-color:var(--bl);box-shadow:var(--sh)}
+.bi-m{font-weight:600;font-size:.85rem;color:var(--brand);font-family:var(--mono)}
+.bi-s{font-size:.72rem;color:var(--ink3);margin-top:2px}
+
+/* Sub-Page */
+.sp{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--sf);z-index:500;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.sp.open{transform:translateX(0)}
+.sph{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--bd);padding:12px 16px;display:flex;align-items:center;gap:12px}
+.spbk{border:none;background:none;font-size:1.1rem;cursor:pointer;color:var(--brand);font-weight:600;display:flex;align-items:center;gap:4px;font-family:var(--f)}
+.sptt{font-size:1.05rem;font-weight:700;font-family:var(--mono)}
+.spbd{padding:16px;max-width:800px;margin:0 auto;padding-bottom:80px}
+
+/* Detail sections */
+.ds{background:var(--card);border-radius:var(--rl);padding:16px;margin-bottom:12px;border:1px solid var(--bd)}
+.dst{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.dil{font-size:.7rem;color:var(--ink4);font-weight:500;text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+.div{font-size:.88rem;color:var(--ink);line-height:1.4;word-break:break-word}
+.div.imp{color:var(--brand);font-weight:600}
+.dfs{display:flex;flex-wrap:wrap;gap:6px}
+.dft{padding:4px 10px;background:var(--bbg);color:var(--brand);border-radius:20px;font-size:.75rem}
+.dn{font-size:.85rem;line-height:1.7;color:var(--ink2);white-space:pre-wrap}
+.dtabs{display:flex;gap:0;border-bottom:2px solid var(--bd);margin-bottom:16px}
+.dtab{padding:8px 16px;font-size:.82rem;font-weight:500;color:var(--ink3);cursor:pointer;border:none;background:none;font-family:var(--f);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s}
+.dtab.on{color:var(--brand);border-bottom-color:var(--brand);font-weight:600}
+.dtc{display:none}.dtc.on{display:block}
+
+/* Sticky compare button */
+.spcs{position:sticky;bottom:0;background:var(--card);border-top:1px solid var(--bd);padding:12px 16px;display:flex;gap:8px;justify-content:center}
+.bp{padding:10px 28px;border-radius:var(--r);border:none;background:var(--brand);color:#fff;font-weight:600;font-size:.85rem;cursor:pointer;font-family:var(--f);transition:all .2s}
+.bp:hover{background:#1e3a8a}.bp:disabled{opacity:.4;cursor:not-allowed}
+
+/* Compare Modal */
+.mo{position:fixed;inset:0;background:rgba(15,23,42,.5);z-index:600;display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px)}
+.mo.open{display:flex}
+.ms{background:var(--card);border-radius:var(--rl) var(--rl) 0 0;width:100%;max-width:900px;max-height:85vh;overflow-y:auto;padding:20px;animation:su .3s ease}
+@keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.msh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.msh h2{font-size:1.1rem;font-weight:700}
+.mcl{width:32px;height:32px;border-radius:50%;border:none;background:var(--sf);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+.ct{width:100%;border-collapse:collapse;font-size:.82rem}
+.ct th{text-align:left;padding:8px 12px;background:var(--sf);font-size:.72rem;font-weight:600;color:var(--ink3);border-bottom:1px solid var(--bd);position:sticky;top:0}
+.ct td{padding:8px 12px;border-bottom:1px solid var(--bd);vertical-align:top}
+.ct .rl{font-weight:500;color:var(--ink3);white-space:nowrap;font-size:.75rem;width:100px}
+
+/* Compare Bar */
+.cb{position:fixed;bottom:56px;left:0;right:0;background:var(--card);border-top:1px solid var(--bd);padding:8px 16px;z-index:180;display:none;align-items:center;justify-content:space-between;box-shadow:0 -2px 8px rgba(0,0,0,.06)}
+.cb.show{display:flex}
+.cbt{font-size:.8rem;color:var(--ink3)}.cbt b{color:var(--accent)}
+.cba{display:flex;gap:8px}
+.bs{padding:6px 14px;border-radius:6px;font-size:.78rem;font-family:var(--f);cursor:pointer;font-weight:500}
+.bsp{background:var(--brand);color:#fff;border:none}
+.bsg{background:none;color:var(--ink3);border:1px solid var(--bd)}
+
+/* Bottom Nav */
+.bn{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--bd);display:flex;z-index:190;padding:4px 0 env(safe-area-inset-bottom,0)}
+.bn-desktop{display:none;gap:0;align-items:stretch}
+.ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 0;cursor:pointer;border:none;background:none;color:var(--ink4);font-size:.65rem;font-family:var(--f);transition:color .15s}
+.ni.on{color:var(--brand)}.ni .nic{font-size:18px}
+
+/* Projects */
+.pl{display:none}
+.pjc{background:var(--card);border:1px solid var(--bd);border-radius:var(--rl);padding:16px;margin-bottom:10px;cursor:pointer;transition:all .15s}
+.pjc:hover{border-color:var(--bl);box-shadow:var(--sh)}
+.pjn{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.pjcu{font-size:.78rem;color:var(--ink3);margin-bottom:6px}
+.pjs{font-size:.82rem;color:var(--ink2);line-height:1.5;margin-bottom:8px}
+.pjm{display:flex;gap:10px;font-size:.72rem;color:var(--ink4);flex-wrap:wrap}
+.pjsb{padding:2px 10px;border-radius:4px;font-size:.7rem;font-weight:600}
+.sv{background:var(--gbg);color:var(--green)}.sd{background:var(--ambg);color:var(--amber)}
+
+/* Collapsible */
+.cls{background:var(--card);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:8px;overflow:hidden}
+.clh{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+.clh h3{font-size:.88rem;font-weight:600}
+.cla{font-size:14px;color:var(--ink4);transition:transform .2s}
+.cls.open .cla{transform:rotate(90deg);color:var(--brand)}
+.clb{padding:0 14px 14px;display:none}.cls.open .clb{display:block}
+
+/* Test Report */
+.trb{margin-bottom:16px}
+.trt{font-size:.82rem;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.trtb{width:100%;border-collapse:collapse;font-size:.78rem}
+.trtb th{text-align:left;padding:6px 10px;background:var(--sf);font-size:.7rem;font-weight:600;color:var(--ink3);border-bottom:1px solid var(--bd)}
+.trtb td{padding:6px 10px;border-bottom:1px solid var(--bd)}
+
+/* Empty */
+.es{text-align:center;padding:60px 20px;color:var(--ink3)}
+.es .esi{font-size:48px;margin-bottom:12px;opacity:.4}
+.es p{font-size:.9rem;margin-bottom:12px}
+.es button{padding:8px 20px;border-radius:var(--r);border:1px solid var(--bd);background:#fff;cursor:pointer;font-family:var(--f);font-size:.82rem}
+
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fin{animation:fi .3s ease both}
+
+@media(max-width:640px){
+html{font-size:14px}.grid{grid-template-columns:1fr}.fb{gap:4px}.chip{font-size:.7rem;padding:3px 8px}
+.lt{font-size:.75rem;display:block;overflow-x:auto}.lt th,.lt td{padding:8px 8px}
+.bc{flex:0 0 85vw}.dg{grid-template-columns:1fr 1fr}.aita{min-height:50px}
+}
+@media(min-width:1024px){
+  .grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+  body{padding-bottom:16px}
+  .cb.show{bottom:0}
+  .bn{display:none}
+  .bn-desktop{display:flex}
+  .ni-d{display:flex;flex-direction:row;align-items:center;gap:6px;padding:0 18px;height:100%;font-size:.82rem;font-family:var(--f);cursor:pointer;border:none;background:none;color:var(--ink3);border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap}
+  .ni-d.on{color:var(--brand);border-bottom-color:var(--brand)}
+  .ni-d:hover{color:var(--ink);background:var(--sf)}
+  .ni-d .nic{font-size:15px}
+  .cb{bottom:0}
+  .mo{align-items:center}
+  .ms{border-radius:var(--rl);max-width:960px;max-height:80vh}
+}
+
+::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- 密码保护层 -->
+<div id="authGate" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;z-index:99999;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <div style="background:#fff;border-radius:16px;padding:40px 32px;max-width:360px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+    <div style="font-size:40px;margin-bottom:12px">🔒</div>
+    <h2 style="font-size:1.2rem;color:#0f172a;margin-bottom:4px">德邦胶水产品库</h2>
+    <p style="font-size:.85rem;color:#64748b;margin-bottom:24px">内部系统 · 请输入访问密码</p>
+    <input id="authPwd" type="password" placeholder="输入密码" style="width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-size:1rem;outline:none;transition:border .2s" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#e2e8f0'">
+    <div id="authErr" style="color:#dc2626;font-size:.8rem;margin-top:8px;min-height:1.2em"></div>
+    <button id="authBtn" onclick="checkAuth()" style="width:100%;padding:12px;background:#1e40af;color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:8px;transition:background .2s" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#1e40af'">进 入</button>
+  </div>
+</div>
+<script>
+var AUTH_HASH='b9c4ba6bec23c2dd27fad284714bf00cb8f248e9a9dfcfc03b70f486e8d16a47';
+async function sha256(s){var b=new TextEncoder().encode(s);var h=await crypto.subtle.digest('SHA-256',b);return Array.from(new Uint8Array(h)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+async function checkAuth(){
+  var p=document.getElementById('authPwd').value;
+  if(!p){document.getElementById('authErr').textContent='请输入密码';return}
+  var h=await sha256(p);
+  if(h===AUTH_HASH){sessionStorage.setItem('gluedb_auth','1');document.getElementById('authGate').remove();document.getElementById('mainApp').style.display=''}
+  else{document.getElementById('authErr').textContent='密码错误，请重试';document.getElementById('authPwd').value='';document.getElementById('authPwd').focus()}
+}
+document.addEventListener('DOMContentLoaded',function(){
+  if(sessionStorage.getItem('gluedb_auth')==='1'){document.getElementById('authGate').remove();document.getElementById('mainApp').style.display=''}
+  document.getElementById('authPwd').addEventListener('keydown',function(e){if(e.key==='Enter')checkAuth()});
+});
+</script>
+
+<div id="mainApp" style="display:none">
+<header class="hd" id="header">
+  <div class="hd-in">
+    <div class="logo"><div class="logo-ic">🧪</div><span>德邦胶水产品库</span></div>
+    <button onclick="APP.showGHSettings()" style="background:rgba(255,255,255,.12);border:none;color:#fff;padding:4px 10px;border-radius:6px;cursor:pointer;font-size:.72rem;margin-right:8px;font-family:var(--f)" title="云同步设置">⚙️</button><nav class="bn-desktop" id="desktopNav">
+      <button class="ni-d on" data-t="products"><span class="nic">📦</span><span>产品</span></button>
+      <button class="ni-d" data-t="projects"><span class="nic">📁</span><span>项目</span></button>
+      <button class="ni-d" data-t="compare"><span class="nic">⚖️</span><span>对比</span></button>
+    </nav>
+    <div class="hd-badges"><span class="hb"><b id="statTotal">0</b> 产品</span><span class="hb"><b id="statComp">0</b> 竞品</span></div>
+  </div>
+</header>
+
+<div class="sw" id="searchWrap">
+  <div class="sr">
+    <div class="siw">
+      <input class="si" id="searchInput" type="text" placeholder="搜索型号、应用、特性…多关键词用空格分隔" autocomplete="off">
+      <button class="sc" id="searchClear">✕</button>
+    </div>
+    <button class="bai" id="btnAI">✦ AI推荐</button>
+    <button class="bai" id="btnImport" style="border-color:var(--accent);color:var(--accent);background:rgba(16,185,129,.06)">📎 导入</button>
+  </div>
+  <div class="fb" id="filterBar">
+    <span class="fl">类型</span><div class="fg" id="fgType"></div>
+    <div class="fsep"></div>
+    <span class="fl">体系</span><div class="fg" id="fgChem"></div>
+    <div class="fsep"></div>
+    <span class="fl">固化</span><div class="fg" id="fgCure"></div>
+    <div class="fsep"></div>
+    <button class="chip comp" id="chipComp">仅竞品</button>
+  </div>
+</div>
+
+<div class="aip" id="aiPanel">
+  <div class="aibx">
+    <div class="aibx-t">✦ AI 智能推荐</div>
+    <textarea class="aita" id="aiInput" placeholder="描述客户需求场景，例如：&#10;GDS25 WDS站点，需要低模量高伸长率环氧胶，耐85°C/85%RH，bondline 50-80um&#10;&#10;或：AirPods结构粘接，PUR热熔胶，UV初固+湿气后固化，高拉伸强度"></textarea>
+    <div class="aikr">
+      <select class="aips" id="aiProvider"><option value="deepseek">DeepSeek</option><option value="claude">Claude</option></select>
+      <input class="aiki" id="aiKey" type="password" placeholder="API Key（仅本地存储）">
+    </div>
+    <div class="aiact">
+      <button class="aisb" id="aiSubmit">推荐产品</button>
+      <span class="aihn">基于产品库数据智能匹配</span>
+    </div>
+    <div class="aire" id="aiResult"></div>
+  </div>
+</div>
+
+<div class="aip" id="importPanel">
+  <div class="aibx" style="background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(16,185,129,.02));border-color:rgba(16,185,129,.35)">
+    <div class="aibx-t" style="color:var(--green)">📎 AI 智能导入 — 自动识别产品并补充数据</div>
+
+    <!-- 拖拽上传区 -->
+    <div id="importDropZone" style="border:2px dashed rgba(16,185,129,.4);border-radius:var(--r);padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:#fff;margin-bottom:10px" onclick="document.getElementById('importFileInput').click()" ondragover="event.preventDefault();this.style.borderColor='var(--green)'" ondragleave="this.style.borderColor='rgba(16,185,129,.4)'" ondrop="event.preventDefault();this.style.borderColor='rgba(16,185,129,.4)';APP.handleImportDrop(event)">
+      <div style="font-size:28px;margin-bottom:6px">📄</div>
+      <div style="font-size:.85rem;color:var(--ink2);font-weight:500">点击或拖拽文件到此处</div>
+      <div style="font-size:.75rem;color:var(--ink4);margin-top:4px">支持 TXT、CSV、JSON、PDF、Excel、PPT、图片</div>
+    </div>
+    <input type="file" id="importFileInput" accept=".txt,.csv,.json,.pdf,.xlsx,.md,.pptx,.ppt,.png,.jpg,.jpeg,.webp,.bmp" style="display:none" multiple onchange="APP.handleImportFiles(this.files)">
+
+    <!-- API 配置（复用 AI 推荐的） -->
+    <div class="aikr">
+      <select class="aips" id="importProvider"><option value="claude">Claude</option><option value="deepseek">DeepSeek</option></select>
+      <input class="aiki" id="importKey" type="password" placeholder="API Key（与 AI推荐 共用）">
+      <button class="aisb" id="importSubmit" onclick="APP.runImport()" style="background:var(--green)" disabled>开始解析</button>
+    </div>
+
+    <!-- 文件列表预览 -->
+    <div id="importFileList" style="margin-top:8px;display:none"></div>
+
+    <!-- 解析结果预览 -->
+    <div id="importResult" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<div class="rs" id="recentStrip"></div>
+
+<div class="tb" id="toolbar">
+  <div class="rc" id="resultCount"></div>
+  <div class="vts">
+    <button class="vb on" data-v="card" title="卡片">▦</button>
+    <button class="vb" data-v="list" title="列表">☰</button>
+    <button class="vb" data-v="board" title="看板">⊞</button>
+  </div>
+</div>
+
+<div class="ma" id="mainArea">
+  <div class="grid" id="cardGrid"></div>
+  <div class="lv" id="listView"></div>
+  <div class="bv" id="boardView"></div>
+  <div class="pl" id="projectList"></div>
+  <div class="es" id="emptyState" style="display:none"><div class="esi">🔍</div><p>未找到匹配的产品</p><button onclick="APP.clearFilters()">清除筛选</button></div>
+</div>
+
+<div class="sp" id="subPage">
+  <div class="sph"><button class="spbk" onclick="APP.closeSub()">← 返回</button><span class="sptt" id="spTitle"></span></div>
+  <div class="spbd" id="spBody"></div>
+</div>
+
+<div class="mo" id="compareModal">
+  <div class="ms">
+    <div class="msh"><h2>📊 产品对比</h2><button class="mcl" onclick="APP.closeCompare()">✕</button></div>
+    <div id="compareBody"></div>
+  </div>
+</div>
+
+<div class="cb" id="compareBar">
+  <span class="cbt" id="compareBarText">选择产品加入对比</span>
+  <div class="cba"><button class="bs bsg" onclick="APP.clearCompare()">清空</button><button class="bs bsp" onclick="APP.openCompare()">开始对比</button></div>
+</div>
+
+<nav class="bn">
+  <button class="ni on" data-t="products"><span class="nic">📦</span><span>产品</span></button>
+  <button class="ni" data-t="projects"><span class="nic">📁</span><span>项目</span></button>
+  <button class="ni" data-t="compare"><span class="nic">⚖️</span><span>对比</span></button>
+</nav>
+
+
+<script>
+var GLUE_DATA = null;
+// 从 data.json 加载数据，支持 GitHub Pages 和本地
+(function(){
+  var jsonUrl = 'data.json?v=' + Date.now();
+  fetch(jsonUrl).then(function(r){ return r.json(); }).then(function(d){
+    GLUE_DATA = d;
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',function(){APP.init();});
+    else APP.init();
+  }).catch(function(err){
+    console.error('加载 data.json 失败:', err);
+    document.getElementById('mainApp').innerHTML = '<div style="text-align:center;padding:60px 20px;color:#dc2626"><h2>⚠️ 数据加载失败</h2><p style="margin-top:8px;font-size:.9rem">'+err.message+'</p><p style="margin-top:12px;font-size:.82rem;color:#64748b">请检查 data.json 是否存在</p></div>';
+    document.getElementById('mainApp').style.display='';
+  });
+})();
+</script>
+<script>
+/* 德邦胶水产品库 Pro — App Logic */
+
+function normalizeData(raw) {
+  var typeMap = { '硅胶、MS改性胶': '硅胶/MS', 'UV Adhesive': 'UV胶' };
+  var products = (raw.products || []).map(function(p) {
+    var displayType = typeMap[p.productType] || p.productType || '未分类';
+    var rawType = p.productType || '-';
+    var kf = ['hardness', 'tensileStrength', 'elongation', 'viscosity', 'application'];
+    var completeness = kf.filter(function(f) { return p[f] && p[f] !== '' && p[f] !== '-'; }).length;
+    return Object.assign({}, p, { displayType: displayType, rawType: rawType, completeness: completeness });
+  });
+  var ts = {}, cs = {}, cu = {};
+  products.forEach(function(p) {
+    if (p.rawType && p.rawType !== '-') ts[p.rawType] = (ts[p.rawType] || 0) + 1;
+    if (p.chemistry && p.chemistry !== '-') cs[p.chemistry] = (cs[p.chemistry] || 0) + 1;
+    if (p.cureMethod && p.cureMethod !== '-') cu[p.cureMethod] = (cu[p.cureMethod] || 0) + 1;
+  });
+  var td = { 'PUR热熔胶': 'PUR热熔胶', 'IR红外固化': 'IR红外', 'UV Adhesive': 'UV胶', '硅胶、MS改性胶': '硅胶/MS', '环氧': '环氧', '丙烯酸AB胶': '丙烯酸AB胶', '导电胶': '导电胶' };
+  var cd2 = { 'UV+热固': 'UV+热固(PUR)', 'IR红外': 'IR红外', 'UV固化': 'UV固化', '湿气固化': '湿气固化', '待确定': '待确定' };
+  function toArr(obj, labelMap) {
+    return Object.entries(obj).sort(function(a, b) { return b[1] - a[1]; }).map(function(e) { return { value: e[0], label: labelMap[e[0]] || e[0], count: e[1] }; });
+  }
+  return { products: products, filters: { types: toArr(ts, td), chems: toArr(cs, {}), cures: toArr(cu, cd2) }, projects: raw.projects || [] };
+}
+
+function bgCls(t) {
+  if (!t || t === '-') return 'bg-ot';
+  if (t.includes('PUR') || t.includes('热熔')) return 'bg-pur';
+  if (t.includes('IR') || t.includes('红外')) return 'bg-ir';
+  if (t.includes('UV')) return 'bg-uv';
+  if (t.includes('环氧')) return 'bg-ep';
+  if (t.includes('硅胶') || t.includes('MS')) return 'bg-si';
+  if (t.includes('丙烯酸')) return 'bg-ac';
+  if (t.includes('导电')) return 'bg-cd';
+  return 'bg-ot';
+}
+
+function exN(t) { if (!t) return ''; var m = t.toString().match(/[\d.]+/); return m ? m[0] : ''; }
+function deb(fn, ms) { var t; return function() { var a = arguments, self = this; clearTimeout(t); t = setTimeout(function() { fn.apply(self, a); }, ms); }; }
+function esc(s) { if (!s) return ''; return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function fmtV(v) {
+  if (v === undefined || v === null) return '-';
+  if (Array.isArray(v)) return v.map(function(x) { return typeof x === 'number' ? x.toFixed(2) : String(x); }).join(' / ');
+  if (typeof v === 'object') { if ('value' in v) return fmtV(v.value) + (v.ti ? ' (TI:' + fmtV(v.ti) + ')' : ''); return JSON.stringify(v); }
+  if (typeof v === 'number') return v.toFixed(2);
+  return String(v);
+}
+function mkColl(id, title, content, open) {
+  return '<div class="cls ' + (open ? 'open' : '') + '" id="cs-' + id + '"><div class="clh" onclick="var s=document.getElementById(\'cs-' + id + '\');s.classList.toggle(\'open\')"><h3>' + title + '</h3><span class="cla">\u25b8</span></div><div class="clb">' + content + '</div></div>';
+}
+
+var APP = {
+  data: null, view: 'card', tab: 'products',
+  filters: { search: '', type: '', chem: '', cure: '', compOnly: false },
+  cmpList: [], curProd: null,
+
+  init: function() {
+    if (typeof GLUE_DATA === 'undefined') return;
+    this.data = normalizeData(GLUE_DATA);
+    this.buildChips(); this.bindEvents(); this.updateStats(); this.render(); this.restoreKey(); this.initScroll();
+  },
+
+  buildChips: function() {
+    var d = this.data.filters;
+    var mk = function(arr, a) { return arr.map(function(f) { return '<button class="chip" data-' + a + '="' + esc(f.value) + '">' + esc(f.label) + '</button>'; }).join(''); };
+    document.getElementById('fgType').innerHTML = '<button class="chip on" data-type="">全部</button>' + mk(d.types, 'type');
+    document.getElementById('fgChem').innerHTML = '<button class="chip on" data-chem="">全部</button>' + mk(d.chems, 'chem');
+    document.getElementById('fgCure').innerHTML = '<button class="chip on" data-cure="">全部</button>' + mk(d.cures, 'cure');
+  },
+
+  bindEvents: function() {
+    var self = this;
+    var si = document.getElementById('searchInput'), sc = document.getElementById('searchClear');
+    si.addEventListener('input', deb(function() { self.filters.search = si.value.trim(); sc.classList.toggle('show', !!self.filters.search); self.render(); }, 250));
+    sc.addEventListener('click', function() { si.value = ''; self.filters.search = ''; sc.classList.remove('show'); self.render(); });
+
+    document.getElementById('filterBar').addEventListener('click', function(e) {
+      var c = e.target.closest('.chip'); if (!c) return;
+      if (c.id === 'chipComp') { self.filters.compOnly = !self.filters.compOnly; c.classList.toggle('on', self.filters.compOnly); self.render(); return; }
+      var a = null, fk = null;
+      if (c.dataset.type !== undefined) { a = 'type'; fk = 'type'; }
+      else if (c.dataset.chem !== undefined) { a = 'chem'; fk = 'chem'; }
+      else if (c.dataset.cure !== undefined) { a = 'cure'; fk = 'cure'; }
+      if (!a) return;
+      var v = c.dataset[a], g = c.parentElement;
+      g.querySelectorAll('.chip').forEach(function(x) { x.classList.remove('on'); });
+      c.classList.add('on'); self.filters[fk] = v; self.render();
+    });
+
+    document.querySelector('.vts').addEventListener('click', function(e) {
+      var b = e.target.closest('.vb'); if (!b) return;
+      document.querySelectorAll('.vb').forEach(function(x) { x.classList.remove('on'); });
+      b.classList.add('on'); self.view = b.dataset.v; self.render();
+    });
+
+    document.querySelector('.bn').addEventListener('click', function(e) {
+      var n = e.target.closest('.ni'); if (!n) return;
+      document.querySelectorAll('.ni').forEach(function(x) { x.classList.remove('on'); });
+      n.classList.add('on'); self.tab = n.dataset.t;
+      if (self.tab === 'compare') { self.openCompare(); return; } self.render();
+    });
+    var dn = document.getElementById('desktopNav');
+    if (dn) {
+      dn.addEventListener('click', function(e) {
+        var n = e.target.closest('.ni-d'); if (!n) return;
+        document.querySelectorAll('.ni-d').forEach(function(x) { x.classList.remove('on'); });
+        n.classList.add('on'); self.tab = n.dataset.t;
+        if (self.tab === 'compare') { self.openCompare(); return; } self.render();
+      });
+    }
+
+    document.getElementById('btnImport').addEventListener('click', function() {
+      var ip = document.getElementById('importPanel');
+      var ap = document.getElementById('aiPanel');
+      var isOn = ip.classList.contains('show');
+      ip.classList.toggle('show');
+      if (!isOn) { ap.classList.remove('show'); document.getElementById('btnAI').classList.remove('on'); }
+      this.classList.toggle('on', !isOn);
+      // 同步 key
+      var aiKey = document.getElementById('aiKey').value;
+      if (aiKey) document.getElementById('importKey').value = aiKey;
+    });
+    document.getElementById('btnAI').addEventListener('click', function() {
+      var p = document.getElementById('aiPanel'), b = document.getElementById('btnAI');
+      var s = !p.classList.contains('show'); p.classList.toggle('show', s); b.classList.toggle('on', s);
+      if (s) document.getElementById('aiInput').focus();
+    });
+
+    document.getElementById('aiSubmit').addEventListener('click', function() { doAIRecommend(); });
+    document.getElementById('compareModal').addEventListener('click', function(e) { if (e.target.id === 'compareModal') self.closeCompare(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { self.closeSub(); self.closeCompare(); } });
+  },
+
+  initScroll: function() {
+    var hd = document.getElementById('header'), sw = document.getElementById('searchWrap'), ly = 0;
+    window.addEventListener('scroll', function() {
+      var y = window.scrollY;
+      hd.classList.toggle('mini', y > 50); sw.classList.toggle('col', y > 50);
+      sw.classList.toggle('hid', y > ly && y > 160); ly = y;
+    }, { passive: true });
+  },
+
+  updateStats: function() {
+    document.getElementById('statTotal').textContent = this.data.products.length;
+    document.getElementById('statComp').textContent = this.data.products.filter(function(p) { return p.isCompetitor; }).length;
+  },
+
+  getFiltered: function() {
+    var f = this.filters;
+    return this.data.products.filter(function(p) {
+      if (f.search) {
+        var kws = f.search.toLowerCase().split(/\s+/).filter(Boolean);
+        var hay = [p.model, p.displayType, p.rawType, p.application, p.features, p.chemistry, p.cureMethod, p.notes, (p.projects || []).join(' ')].filter(Boolean).join(' ').toLowerCase();
+        if (!kws.every(function(k) { return hay.includes(k); })) return false;
+      }
+      if (f.type && p.rawType !== f.type) return false;
+      if (f.chem && p.chemistry !== f.chem) return false;
+      if (f.cure && p.cureMethod !== f.cure) return false;
+      if (f.compOnly && !p.isCompetitor) return false;
+      return true;
+    });
+  },
+
+  render: function() {
+    var isProd = this.tab === 'products';
+    document.getElementById('toolbar').style.display = isProd ? 'flex' : 'none';
+    document.getElementById('projectList').style.display = (!isProd && this.tab === 'projects') ? 'block' : 'none';
+    document.getElementById('recentStrip').style.display = isProd ? '' : 'none';
+    if (this.tab === 'projects') { this.renderProjects(); ['cardGrid','listView','boardView','emptyState'].forEach(function(id){document.getElementById(id).style.display='none';}); return; }
+    var prods = this.getFiltered(), total = prods.length;
+    document.getElementById('resultCount').innerHTML = '显示 <b>' + total + '</b> 款产品';
+    this.renderRecent();
+    if (!total) { ['cardGrid','listView','boardView'].forEach(function(id){document.getElementById(id).style.display='none';}); document.getElementById('emptyState').style.display = 'block'; return; }
+    document.getElementById('emptyState').style.display = 'none';
+    var v = this.view;
+    document.getElementById('cardGrid').style.display = v === 'card' ? 'grid' : 'none';
+    document.getElementById('listView').style.display = v === 'list' ? 'block' : 'none';
+    document.getElementById('boardView').style.display = v === 'board' ? 'flex' : 'none';
+    if (v === 'card') this.renderCards(prods); else if (v === 'list') this.renderList(prods); else this.renderBoard(prods);
+  },
+
+  renderRecent: function() {
+    var c = document.getElementById('recentStrip');
+    var isF = this.filters.search || this.filters.type || this.filters.chem || this.filters.cure || this.filters.compOnly;
+    if (isF) { c.innerHTML = ''; return; }
+    var now = new Date(), cut = new Date(now - 7 * 864e5), cs2 = cut.toISOString().slice(0, 10);
+    var r = this.data.products.filter(function(p) { return p.lastUpdated && p.lastUpdated >= cs2; }).sort(function(a, b) { return b.lastUpdated.localeCompare(a.lastUpdated); });
+    if (!r.length) { c.innerHTML = ''; return; }
+    c.innerHTML = '<div class="rst">\ud83d\udd50 最近更新 <span class="cnt">' + r.length + '</span></div><div class="rscr">' + r.map(function(p) { return '<div class="rchip" onclick="APP.showDetail(\'' + esc(p.id) + '\')"><span class="rchip-m">' + esc(p.model) + '</span><span class="rchip-t">' + esc(p.displayType) + '</span></div>'; }).join('') + '</div>';
+  },
+
+  renderCards: function(prods) {
+    var self = this;
+    document.getElementById('cardGrid').innerHTML = prods.map(function(p, i) {
+      var ic = p.isCompetitor, is2 = self.cmpList.includes(p.id), bg = bgCls(p.rawType);
+      var pms = [];
+      if (p.viscosity && p.viscosity !== '-') pms.push({ l: '粘度', v: exN(p.viscosity), k: true });
+      if (p.hardness && p.hardness !== '-') pms.push({ l: '硬度', v: exN(p.hardness) });
+      if (p.tensileStrength && p.tensileStrength !== '-') pms.push({ l: '拉伸', v: exN(p.tensileStrength) + 'MPa' });
+      if (p.elongation && p.elongation !== '-') pms.push({ l: '伸长', v: exN(p.elongation) + '%' });
+      if (p.tgValue && p.tgValue !== '-') pms.push({ l: 'Tg', v: exN(p.tgValue) + '\u00b0C' });
+      var desc = (p.features && p.features !== '-') ? p.features : (p.application && p.application !== '-') ? p.application : '';
+      var dots = [0,1,2,3,4].map(function(j) { return '<div class="bdot ' + (j < p.completeness ? 'f' : '') + '"></div>'; }).join('');
+      return '<div class="cd fin ' + (ic ? 'comp' : '') + ' ' + (is2 ? 'sel' : '') + '" style="animation-delay:' + (i * 20) + 'ms" onclick="APP.showDetail(\'' + esc(p.id) + '\')">' +
+        '<div class="cd-top"><span class="cd-mdl">' + esc(p.model) + '</span><span><span class="cbg ' + bg + '">' + esc(p.displayType) + '</span>' + (ic ? '<span class="cbg bg-cp">竞品</span>' : '') + '</span></div>' +
+        '<div class="cd-ch">' + (p.chemistry && p.chemistry !== '未知' && p.chemistry !== '-' ? esc(p.chemistry) : '') + (p.chemistry && p.chemistry !== '未知' && p.chemistry !== '-' && p.cureMethod && p.cureMethod !== '待确定' && p.cureMethod !== '-' ? ' \u00b7 ' : '') + (p.cureMethod && p.cureMethod !== '待确定' && p.cureMethod !== '-' ? esc(p.cureMethod) : '') + '</div>' +
+        '<div class="cd-pr">' + pms.slice(0, 4).map(function(x) { return '<span class="pt ' + (x.k ? 'k' : '') + '">' + esc(x.l) + ' ' + esc(x.v) + '</span>'; }).join('') + (!pms.length ? '<span class="pt" style="color:var(--ink4)">暂无参数</span>' : '') + '</div>' +
+        '<div class="cd-desc">' + (esc(desc) || '<span style="color:var(--ink4)">暂无描述</span>') + '</div>' +
+        '<div class="cd-bot"><div class="cd-comp" title="数据完整度 ' + p.completeness + '/5">' + dots + '</div><span class="cd-dt">' + esc(p.lastUpdated || '') + '</span></div>' +
+        '<div class="cd-ck ' + (is2 ? 'on' : '') + '" onclick="event.stopPropagation();APP.toggleCompare(\'' + esc(p.id) + '\')">' + (is2 ? '\u2713' : '') + '</div></div>';
+    }).join('');
+  },
+
+  renderList: function(prods) {
+    document.getElementById('listView').innerHTML = '<table class="lt"><thead><tr><th>型号</th><th>类型</th><th>体系</th><th>固化</th><th>粘度</th><th>硬度</th><th>拉伸</th><th>伸长率</th></tr></thead><tbody>' +
+      prods.map(function(p) { return '<tr onclick="APP.showDetail(\'' + esc(p.id) + '\')"><td class="tm">' + esc(p.model) + '</td><td>' + esc(p.displayType) + '</td><td>' + esc(p.chemistry || '-') + '</td><td>' + esc(p.cureMethod || '-') + '</td><td class="tn">' + (exN(p.viscosity) || '-') + '</td><td class="tn">' + (exN(p.hardness) || '-') + '</td><td class="tn">' + (exN(p.tensileStrength) || '-') + '</td><td class="tn">' + (exN(p.elongation) || '-') + '</td></tr>'; }).join('') +
+      '</tbody></table>';
+  },
+
+  renderBoard: function(prods) {
+    var g = {};
+    prods.forEach(function(p) { var k = p.displayType || '未分类'; (g[k] = g[k] || []).push(p); });
+    document.getElementById('boardView').innerHTML = Object.entries(g).map(function(e) {
+      var t = e[0], items = e[1];
+      return '<div class="bc"><div class="bch">' + esc(t) + ' <span class="bcc">' + items.length + '</span></div><div class="bcb">' +
+        items.map(function(p) { return '<div class="bi" onclick="APP.showDetail(\'' + esc(p.id) + '\')"><div class="bi-m">' + esc(p.model) + '</div><div class="bi-s">' + esc(p.chemistry || '-') + ' \u00b7 ' + (exN(p.viscosity) || '-') + ' mPa\u00b7s</div></div>'; }).join('') +
+        '</div></div>';
+    }).join('');
+  },
+
+  showDetail: function(id) {
+    var p = this.data.products.find(function(x) { return x.id === id; }); if (!p) return; this.curProd = p;
+    document.getElementById('spTitle').textContent = p.model;
+    var hr = p.testReports && p.testReports.length > 0, hn = p.notes && p.notes.trim();
+    var tabs = '<div class="dtabs" style="display:flex;align-items:center;justify-content:space-between">' +
+        '<div style="display:flex">' +
+        '<button class="dtab on" onclick="APP.swTab(this,\'dtb\')">基本参数</button>' +
+        '<button class="dtab" onclick="APP.swTab(this,\'dtr\')">📊 测试报告' + (p.testReports && p.testReports.length ? ' <span style="font-size:.7rem;background:var(--brand);color:#fff;border-radius:10px;padding:1px 6px">' + p.testReports.length + '</span>' : '') + '</button>' +
+        (hn ? '<button class="dtab" onclick="APP.swTab(this,\'dtn\')">备注</button>' : '') +
+        '</div>' +
+        '<button onclick="APP.openUpload(\''+p.id+'\',\'dtr\')" style="font-size:.75rem;color:var(--brand);border:1px solid var(--brand);background:none;border-radius:6px;padding:4px 10px;cursor:pointer;font-family:var(--f);white-space:nowrap">📎 上传报告</button>' +
+        '</div>';
+    var f1 = [['产品类型', p.displayType], ['化学体系', p.chemistry, 'imp'], ['固化方式', p.cureMethod], ['品牌', p.brand], ['颜色', p.color], ['保质期', p.shelfLife ? p.shelfLife + '个月' : '-'], ['储存条件', p.storage], ['开发状态', p.devStatus], ['客户状态', p.customerStatus]];
+    var f2 = [['硬度', p.hardness, 'imp'], ['拉伸强度(MPa)', p.tensileStrength], ['断裂伸长率', p.elongation], ['比重', p.specificGravity], ['粘度', p.viscosity, 'imp'], ['剪切强度', p.shearStrength], ['Tg(\u00b0C)', p.tgValue], ['模量', p.modulus]];
+    var mg = function(fs) { return '<div class="dg">' + fs.map(function(e) { return '<div><div class="dil">' + esc(e[0]) + '</div><div class="div ' + (e[2] || '') + '">' + esc(e[1] || '-') + '</div></div>'; }).join('') + '</div>'; };
+    var bh = '<div class="ds"><div class="dst">\ud83d\udccb 基本信息</div>' + mg(f1) + '</div><div class="ds"><div class="dst">\ud83d\udcd0 关键参数</div>' + mg(f2) + '</div>';
+    if (p.application && p.application !== '-') bh += '<div class="ds"><div class="dst">\ud83c\udfaf 典型应用</div><p style="font-size:.88rem;line-height:1.7;color:var(--ink2)">' + esc(p.application) + '</p></div>';
+    if (p.features && p.features !== '-') {
+      var ft = p.features.split(/[;；]/).filter(function(f) { return f.trim(); }).map(function(f) { return '<span class="dft">' + esc(f.trim()) + '</span>'; }).join('');
+      bh += '<div class="ds"><div class="dst">\u2728 特性</div><div class="dfs">' + ft + '</div></div>';
+    }
+    if ((p.versions && p.versions.length) || p.tdsVersion || p.tdsDate) {
+      var vh = '';
+      if (p.versions && p.versions.length) {
+        vh += '<table class="trtb"><thead><tr><th>版本</th><th>说明</th></tr></thead><tbody>' + p.versions.map(function(v) { return '<tr><td>' + esc(v.version || '-') + '</td><td>' + esc(v.note || v.tdsVersion || '-') + '</td></tr>'; }).join('') + '</tbody></table>';
+      } else if (p.tdsVersion || p.tdsDate) { vh += mg([['TDS版本', p.tdsVersion], ['TDS日期', p.tdsDate]]); }
+      bh += '<div class="ds"><div class="dst">\ud83d\udcc4 版本/TDS</div>' + vh + '</div>';
+    }
+    bh += '<div style="font-size:.72rem;color:var(--ink4);text-align:right;padding:8px 0">最后更新: ' + esc(p.lastUpdated || '-') + '</div>';
+    var rh = this.renderTR(p.testReports || []);
+    var nh = '<div class="dn">' + esc(p.notes || '暂无备注') + '</div>';
+    var is2 = this.cmpList.includes(p.id);
+    document.getElementById('spBody').innerHTML = tabs +
+      '<div class="dtc on" id="dtb">' + bh + '</div><div class="dtc" id="dtr">' + rh + '</div><div class="dtc" id="dtn">' + nh + '</div>' +
+      '<div class="spcs"><button class="bp" id="spCB" onclick="APP.togCmpDetail()" ' + (is2 ? 'disabled' : '') + '>' + (is2 ? '已加入对比' : '加入对比') + '</button></div>';
+    document.getElementById('subPage').classList.add('open'); document.body.style.overflow = 'hidden';
+  },
+
+  renderTR: function(reports) {
+    if (!reports || !reports.length) return '<p style="color:var(--ink4)">暂无测试报告</p>';
+
+    function isLeaf(v) {
+      if (v === null || v === undefined || typeof v !== 'object' || Array.isArray(v)) return true;
+      var ks = Object.keys(v);
+      return ks.length > 0 && ks.every(function(k) { return k === 'value' || k === 'ti' || k === 'unit'; });
+    }
+
+    function renderSection(title, sd, unit) {
+      if (!sd || typeof sd !== 'object') return '';
+      var h = '<div class="trb" style="margin-bottom:14px">';
+      h += '<div style="font-size:.8rem;font-weight:700;color:var(--brand);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--bd)">' + esc(title) + (unit ? ' <span style="font-weight:400;color:var(--ink4)">(' + esc(unit) + ')</span>' : '') + '</div>';
+      var entries = Object.entries(sd).filter(function(e) { return e[0] !== 'unit'; });
+      if (!entries.length) return h + '</div>';
+      var firstVal = entries[0][1];
+
+      // 情况A：所有值是叶子 → 简单kv
+      if (entries.every(function(e) { return isLeaf(e[1]); })) {
+        h += '<table class="trtb"><tbody>';
+        entries.forEach(function(e) { h += '<tr><td class="rl">' + esc(e[0]) + '</td><td>' + esc(fmtV(e[1])) + '</td></tr>'; });
+        h += '</tbody></table>';
+
+      // 情况B：一层嵌套 → { 产品: 值 }，产品为列
+      } else if (!Array.isArray(firstVal) && typeof firstVal === 'object' && isLeaf(Object.values(firstVal || {})[0])) {
+        var cols = new Set();
+        entries.forEach(function(e) { if (e[1] && typeof e[1] === 'object') Object.keys(e[1]).forEach(function(k) { if (k !== 'unit') cols.add(k); }); });
+        var colArr = Array.from(cols);
+        h += '<table class="trtb"><thead><tr><th>项目</th>' + colArr.map(function(c) { return '<th style="color:var(--brand)">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
+        entries.forEach(function(e) {
+          var key = e[0], row = e[1];
+          if (typeof row === 'string' || typeof row === 'number') { h += '<tr><td class="rl">' + esc(key) + '</td><td colspan="' + colArr.length + '">' + esc(String(row)) + '</td></tr>'; }
+          else { h += '<tr><td class="rl">' + esc(key) + '</td>' + colArr.map(function(c) { return '<td>' + (row[c] !== undefined ? esc(fmtV(row[c])) : '-') + '</td>'; }).join('') + '</tr>'; }
+        });
+        h += '</tbody></table>';
+
+      // 情况C：两层嵌套 → { 基材: { 条件: { 产品: 值 } } }
+      } else {
+        entries.forEach(function(e) {
+          var subKey = e[0], subData = e[1];
+          if (!subData || typeof subData !== 'object') return;
+          var subUnit = subData.unit || '';
+          h += '<div style="margin-bottom:10px"><div style="font-size:.76rem;font-weight:600;color:var(--ink2);margin-bottom:4px">▸ ' + esc(subKey) + (subUnit ? ' (' + esc(subUnit) + ')' : '') + '</div>';
+          var timeEntries = Object.entries(subData).filter(function(x) { return x[0] !== 'unit'; });
+          var prods2 = new Set();
+          timeEntries.forEach(function(te) { if (te[1] && typeof te[1] === 'object' && !Array.isArray(te[1])) Object.keys(te[1]).forEach(function(k) { if (k !== 'unit') prods2.add(k); }); });
+          var prodArr = Array.from(prods2);
+          if (prodArr.length) {
+            h += '<table class="trtb"><thead><tr><th>条件</th>' + prodArr.map(function(p) { return '<th style="color:var(--brand)">' + esc(p) + '</th>'; }).join('') + '</tr></thead><tbody>';
+            timeEntries.forEach(function(te) {
+              var cond = te[0], row = te[1];
+              if (typeof row === 'string' || typeof row === 'number') { h += '<tr><td class="rl">' + esc(cond) + '</td><td colspan="' + prodArr.length + '">' + esc(String(row)) + '</td></tr>'; }
+              else { h += '<tr><td class="rl">' + esc(cond) + '</td>' + prodArr.map(function(p) { return '<td>' + (row[p] !== undefined ? esc(fmtV(row[p])) : '-') + '</td>'; }).join('') + '</tr>'; }
+            });
+            h += '</tbody></table>';
+          } else {
+            h += '<table class="trtb"><tbody>' + timeEntries.map(function(te) { return '<tr><td class="rl">' + esc(te[0]) + '</td><td>' + esc(fmtV(te[1])) + '</td></tr>'; }).join('') + '</tbody></table>';
+          }
+          h += '</div>';
+        });
+      }
+      return h + '</div>';
+    }
+
+    return reports.map(function(r) {
+      var d = r.data || {};
+      var h = '<div style="background:var(--sf);border-radius:var(--r);padding:12px 14px;margin-bottom:12px;border:1px solid var(--bd)">';
+      h += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">';
+      h += '<div style="font-size:.85rem;font-weight:700;color:var(--ink)">📊 ' + esc(r.reportId || 'Report') + '</div>';
+      h += '<div style="font-size:.75rem;color:var(--ink4)">' + esc(r.date || '') + '</div></div>';
+      if (r.comparisonProducts && r.comparisonProducts.length) {
+        h += '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px">' + r.comparisonProducts.map(function(p) { return '<span style="padding:2px 8px;border-radius:10px;font-size:.72rem;background:var(--bbg);color:var(--brand)">' + esc(p) + '</span>'; }).join('') + '</div>';
+      }
+      Object.entries(d).forEach(function(se) {
+        var secName = se[0], secData = se[1];
+        if (!secData || typeof secData !== 'object') return;
+        h += renderSection(secName, secData, secData.unit || '');
+      });
+      return h + '</div>';
+    }).join('');
+  },
+
+
+  swTab: function(btn, tid) {
+    btn.parentElement.querySelectorAll('.dtab').forEach(function(t) { t.classList.remove('on'); }); btn.classList.add('on');
+    document.querySelectorAll('.dtc').forEach(function(c) { c.classList.remove('on'); });
+    var t = document.getElementById(tid); if (t) t.classList.add('on');
+  },
+  openUpload: function(prodId, tabId) {
+    var self = this;
+    // 创建文件选择器
+    var inp = document.createElement('input');
+    inp.type = 'file';
+    inp.accept = '.pdf,.txt,.csv,.json,.xlsx,.png,.jpg,.jpeg';
+    inp.onchange = function() {
+      var file = inp.files[0]; if (!file) return;
+      self.parseReportFile(prodId, file, tabId);
+    };
+    inp.click();
+  },
+
+  parseReportFile: function(prodId, file, tabId) {
+    var self = this;
+    var prod = this.data.products.find(function(p) { return p.id === prodId; });
+    if (!prod) return;
+
+    // 显示进度提示
+    var dtr = document.getElementById('dtr');
+    var loadingDiv = document.createElement('div');
+    loadingDiv.id = 'uploadLoading';
+    loadingDiv.innerHTML = '<div style="text-align:center;padding:24px;color:var(--ink3)"><div style="font-size:24px;margin-bottom:8px">⏳</div><div style="font-size:.85rem">AI 正在解析文件...</div><div style="font-size:.75rem;margin-top:4px;color:var(--ink4)">' + file.name + '</div></div>';
+    if (dtr) { dtr.innerHTML = ''; dtr.appendChild(loadingDiv); APP.swTab(document.querySelector('.dtab[onclick*="dtr"]'), 'dtr'); }
+
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var content = '';
+      if (file.type === 'application/json') {
+        // JSON 文件直接尝试解析为 testReport 格式
+        try {
+          var parsed = JSON.parse(e.target.result);
+          self.mergeReport(prodId, parsed, tabId);
+          return;
+        } catch(ex) { content = e.target.result; }
+      } else if (file.name.endsWith('.json')) {
+        try {
+          var parsed = JSON.parse(e.target.result);
+          self.mergeReport(prodId, parsed, tabId);
+          return;
+        } catch(ex) { content = e.target.result; }
+      } else {
+        content = e.target.result;
+      }
+      // 其他格式：调用 AI 解析
+      self.aiParseReport(prodId, prod.model, content, file.name, tabId);
+    };
+
+    if (file.type === 'application/json' || file.name.endsWith('.json')) {
+      reader.readAsText(file);
+    } else if (file.type.startsWith('image/')) {
+      reader.readAsDataURL(file);
+    } else {
+      reader.readAsText(file);
+    }
+  },
+
+  aiParseReport: function(prodId, model, content, filename, tabId) {
+    var self = this;
+    var key = localStorage.getItem('db_ai_key') || document.getElementById('aiKey').value;
+    var provider = document.getElementById('aiProvider').value || 'claude';
+
+    // 截断过长内容
+    var maxLen = 6000;
+    var truncated = content.length > maxLen ? content.substring(0, maxLen) + '\n...(内容已截断)' : content;
+
+    var prompt = '你是一个专业的胶水产品测试报告解析助手。请把以下测试报告内容解析为标准的 JSON 格式。\n\n' +
+      '产品型号: ' + model + '\n文件名: ' + filename + '\n\n报告内容:\n' + truncated + '\n\n' +
+      '请输出一个 JSON 对象，格式如下（只输出 JSON，不要其他说明）:\n' +
+      '{\n  "reportId": "报告编号或自动生成",\n  "date": "YYYY-MM-DD",\n  "batch": "批次号（没有则空字符串）",\n  "type": "Test Report",\n  "comparisonProducts": ["对比产品1", "对比产品2"],\n' +
+      '  "data": {\n    "章节名": {\n      "产品型号或条件": 数值或字符串,\n      "unit": "单位"\n    }\n  }\n}';
+
+    var apiUrl = provider === 'claude'
+      ? 'https://api.anthropic.com/v1/messages'
+      : 'https://api.deepseek.com/v1/chat/completions';
+
+    var requestBody, headers;
+    if (provider === 'claude') {
+      headers = { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' };
+      requestBody = { model: 'claude-haiku-4-5-20251001', max_tokens: 2000, messages: [{ role: 'user', content: prompt }] };
+    } else {
+      headers = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key };
+      requestBody = { model: 'deepseek-chat', max_tokens: 2000, messages: [{ role: 'user', content: prompt }] };
+    }
+
+    fetch(apiUrl, { method: 'POST', headers: headers, body: JSON.stringify(requestBody) })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var text = provider === 'claude'
+          ? (data.content && data.content[0] && data.content[0].text || '')
+          : (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '');
+        // 提取 JSON
+        var jsonMatch = text.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) throw new Error('AI 未返回有效 JSON');
+        var report = JSON.parse(jsonMatch[0]);
+        self.mergeReport(prodId, report, tabId);
+      })
+      .catch(function(err) {
+        var dtr = document.getElementById('dtr');
+        if (dtr) dtr.innerHTML = '<div style="padding:16px;color:red;font-size:.85rem">❌ 解析失败: ' + err.message + '<br><small>请检查 API Key 是否正确，或手动复制内容后联系管理员</small></div>' + self.renderTR(APP.data.products.find(function(p){return p.id===prodId;}).testReports||[]);
+      });
+  },
+
+  mergeReport: function(prodId, report, tabId) {
+    var self = this;
+    var prod = this.data.products.find(function(p) { return p.id === prodId; });
+    if (!prod) return;
+    if (!prod.testReports) prod.testReports = [];
+
+    // 检查重复 reportId
+    var existIdx = prod.testReports.findIndex(function(r) { return r.reportId === report.reportId; });
+    if (existIdx >= 0) {
+      if (!confirm('报告 ' + report.reportId + ' 已存在，是否覆盖？')) return;
+      prod.testReports[existIdx] = report;
+    } else {
+      prod.testReports.push(report);
+    }
+
+    // 更新 GLUE_DATA 并重新保存到 HTML（通过下载）
+    self.saveAndRefresh(prodId, tabId);
+  },
+
+  saveAndRefresh: function(prodId, tabId) {
+    var self = this;
+    var prod = this.data.products.find(function(p) { return p.id === prodId; });
+
+    // 刷新当前详情页
+    var dtr = document.getElementById('dtr');
+    if (dtr) dtr.innerHTML = self.renderTR(prod.testReports || []);
+
+    // 提示保存
+    self.showSaveBanner(prodId);
+  },
+
+  showSaveBanner: function(prodId) {
+    var existing = document.getElementById('saveBanner');
+    if (existing) existing.remove();
+    var banner = document.createElement('div');
+    banner.id = 'saveBanner';
+    banner.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;padding:10px 20px;border-radius:8px;z-index:999;display:flex;align-items:center;gap:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);font-size:.85rem';
+    banner.innerHTML = '✅ 数据已更新  <button id="syncBtn" onclick="APP.syncToGitHub()" style="background:#fff;color:var(--brand);border:none;padding:4px 12px;border-radius:5px;cursor:pointer;font-weight:600;font-size:.82rem">☁️ 同步到云端</button><button onclick="APP.downloadDataJSON()" style="background:rgba(255,255,255,.2);color:#fff;border:none;padding:4px 12px;border-radius:5px;cursor:pointer;font-size:.78rem;margin-left:4px">💾 下载JSON</button><button onclick="this.parentElement.remove()" style="background:none;border:none;color:#fff;font-size:16px;cursor:pointer;padding:0 4px">✕</button>';
+    document.body.appendChild(banner);
+    setTimeout(function() { if (banner.parentElement) banner.remove(); }, 15000);
+  },
+
+  getDataJSON: function() {
+    return JSON.stringify({
+      products: this.data.products,
+      projects: [],
+      meta: { generatedAt: new Date().toISOString(), generatedBy: 'browser-sync', source: 'web-editor' },
+      products_count: this.data.products.length
+    }, null, 2);
+  },
+
+  downloadDataJSON: function() {
+    var blob = new Blob([this.getDataJSON()], { type: 'application/json;charset=utf-8' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'data.json'; a.click(); URL.revokeObjectURL(a.href);
+  },
+
+  // GitHub 云同步
+  syncToGitHub: function() {
+    var self = this;
+    var pat = localStorage.getItem('gh_pat');
+    var repo = localStorage.getItem('gh_repo') || 'dw74454787852-byte/glue-db';
+    if (!pat) { self.showGHSettings(); return; }
+
+    var btn = document.getElementById('syncBtn');
+    if (btn) { btn.disabled = true; btn.innerHTML = '⏳ 同步中...'; }
+
+    var content = btoa(unescape(encodeURIComponent(self.getDataJSON())));
+
+    // 先获取文件 SHA（更新需要）
+    fetch('https://api.github.com/repos/' + repo + '/contents/data.json', {
+      headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github+json' }
+    }).then(function(r) { return r.ok ? r.json() : { sha: null }; })
+    .then(function(existing) {
+      var body = {
+        message: '📦 sync: ' + self.data.products.length + ' products (' + new Date().toLocaleString('zh-CN') + ')',
+        content: content,
+        branch: 'main'
+      };
+      if (existing.sha) body.sha = existing.sha;
+      return fetch('https://api.github.com/repos/' + repo + '/contents/data.json', {
+        method: 'PUT',
+        headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+    }).then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.content) {
+        self.showToast('✅ 已同步到云端！' + self.data.products.length + ' 款产品', 'green');
+      } else {
+        throw new Error(d.message || '同步失败');
+      }
+    }).catch(function(err) {
+      self.showToast('❌ 同步失败: ' + err.message, 'red');
+    }).finally(function() {
+      if (btn) { btn.disabled = false; btn.innerHTML = '☁️ 同步到云端'; }
+    });
+  },
+
+  showToast: function(msg, color) {
+    var t = document.createElement('div');
+    t.style.cssText = 'position:fixed;top:60px;left:50%;transform:translateX(-50%);background:'+(color==='red'?'#dc2626':'#16a34a')+';color:#fff;padding:10px 20px;border-radius:8px;z-index:99999;font-size:.85rem;box-shadow:0 4px 16px rgba(0,0,0,.2);white-space:nowrap';
+    t.textContent = msg; document.body.appendChild(t);
+    setTimeout(function(){ t.remove(); }, 4000);
+  },
+
+  showGHSettings: function() {
+    var self = this;
+    var pat = localStorage.getItem('gh_pat') || '';
+    var repo = localStorage.getItem('gh_repo') || 'dw74454787852-byte/glue-db';
+    var overlay = document.createElement('div');
+    overlay.id = 'ghSettingsOverlay';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:99998;display:flex;align-items:center;justify-content:center';
+    overlay.innerHTML = '<div style="background:#fff;border-radius:12px;padding:24px;max-width:400px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,.3)">' +
+      '<h3 style="margin-bottom:16px;font-size:1rem">☁️ GitHub 云同步设置</h3>' +
+      '<label style="font-size:.82rem;color:#64748b;display:block;margin-bottom:4px">GitHub Personal Access Token</label>' +
+      '<input id="ghPatInput" type="password" value="'+pat+'" placeholder="ghp_xxxx..." style="width:100%;padding:10px 12px;border:2px solid #e2e8f0;border-radius:8px;font-size:.9rem;margin-bottom:12px">' +
+      '<label style="font-size:.82rem;color:#64748b;display:block;margin-bottom:4px">仓库（owner/repo）</label>' +
+      '<input id="ghRepoInput" value="'+repo+'" style="width:100%;padding:10px 12px;border:2px solid #e2e8f0;border-radius:8px;font-size:.9rem;margin-bottom:16px">' +
+      '<div style="font-size:.72rem;color:#94a3b8;margin-bottom:16px">Token 需要 repo 权限 · 仅保存在本地浏览器</div>' +
+      '<div style="display:flex;gap:8px">' +
+      '<button onclick="var p=document.getElementById('ghPatInput').value;var r=document.getElementById('ghRepoInput').value;if(p){localStorage.setItem('gh_pat',p);localStorage.setItem('gh_repo',r);document.getElementById('ghSettingsOverlay').remove();APP.syncToGitHub();}else{alert('请输入 Token')}" style="flex:1;padding:10px;background:#1e40af;color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer">保存并同步</button>' +
+      '<button onclick="document.getElementById('ghSettingsOverlay').remove()" style="padding:10px 16px;background:none;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;color:#64748b">取消</button>' +
+      '</div></div>';
+    document.body.appendChild(overlay);
+  },
+
+  downloadUpdatedHTML: function() {
+    this.downloadDataJSON();
+  },
+
+
+  // ================================================================
+  //  导入面板逻辑
+  // ================================================================
+  importFiles: [],   // 待解析文件列表
+
+  handleImportDrop: function(e) {
+    var files = e.dataTransfer.files;
+    if (files && files.length) this.handleImportFiles(files);
+  },
+
+  handleImportFiles: function(files) {
+    this.importFiles = Array.from(files);
+    var list = document.getElementById('importFileList');
+    var btn  = document.getElementById('importSubmit');
+    if (!this.importFiles.length) { list.style.display = 'none'; btn.disabled = true; return; }
+    list.style.display = 'block';
+    list.innerHTML = this.importFiles.map(function(f, i) {
+      return '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:#fff;border-radius:6px;margin-bottom:4px;font-size:.82rem">' +
+        '<span style="font-size:16px">' + (f.name.endsWith('.json') ? '📋' : f.name.endsWith('.csv') ? '📊' : /\.pptx?$/i.test(f.name) ? '📽️' : '📄') + '</span>' +
+        '<span style="flex:1;color:var(--ink2)">' + f.name + '</span>' +
+        '<span style="color:var(--ink4);font-size:.72rem">' + (f.size > 1024 ? (f.size/1024).toFixed(1) + ' KB' : f.size + ' B') + '</span>' +
+        '<button onclick="APP.removeImportFile(' + i + ')" style="border:none;background:none;color:var(--ink4);cursor:pointer;font-size:14px">✕</button></div>';
+    }).join('');
+    btn.disabled = false;
+    // 同步 Key
+    var aiKey = document.getElementById('aiKey').value;
+    if (aiKey && !document.getElementById('importKey').value) document.getElementById('importKey').value = aiKey;
+  },
+
+  removeImportFile: function(i) {
+    this.importFiles.splice(i, 1);
+    this.handleImportFiles(this.importFiles);
+  },
+
+  runImport: function() {
+    var self = this;
+    if (!this.importFiles.length) return;
+    var key = document.getElementById('importKey').value || document.getElementById('aiKey').value;
+    if (!key) { alert('请先输入 API Key'); document.getElementById('importKey').focus(); return; }
+    localStorage.setItem('db_ai_key', key);
+    localStorage.setItem('db_ai_provider', document.getElementById('importProvider').value);
+
+    var result = document.getElementById('importResult');
+    result.innerHTML = '<div style="text-align:center;padding:20px;color:var(--ink3)"><div style="font-size:22px;margin-bottom:6px">⏳</div>AI 正在识别产品并解析数据...</div>';
+
+    // 逐文件读取，合并内容后统一发给 AI
+    var readings = this.importFiles.map(function(f) {
+      // 图片文件：读取为 base64
+      if (f.type && f.type.startsWith('image/')) {
+        return new Promise(function(resolve) {
+          var reader = new FileReader();
+          reader.onload = function(e) { resolve({ name: f.name, content: '', isImage: true, base64: e.target.result, mediaType: f.type }); };
+          reader.onerror = function() { resolve({ name: f.name, content: '(图片读取失败)', isImage: false }); };
+          reader.readAsDataURL(f);
+        });
+      }
+      // PPTX: 用 JSZip 解析幻灯片文本
+      if (/\.pptx?$/i.test(f.name) && typeof JSZip !== 'undefined') {
+        return f.arrayBuffer().then(function(buf) {
+          return JSZip.loadAsync(buf);
+        }).then(function(zip) {
+          var slideFiles = Object.keys(zip.files).filter(function(n) { return /^ppt\/slides\/slide\d+\.xml$/i.test(n); }).sort();
+          return Promise.all(slideFiles.map(function(s) { return zip.file(s).async('string'); }));
+        }).then(function(slides) {
+          var text = slides.map(function(xml, i) {
+            var t = xml.replace(/<a:p[^>]*>/g, '\n').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#\d+;/g, '').replace(/\n{3,}/g, '\n\n').trim();
+            return '--- Slide ' + (i+1) + ' ---\n' + t;
+          }).join('\n\n');
+          return { name: f.name, content: text || '(PPT无可提取文本)', isImage: false };
+        }).catch(function() { return { name: f.name, content: '(PPT解析失败)', isImage: false }; });
+      }
+      // 其他文件: 文本读取
+      return new Promise(function(resolve) {
+        var reader = new FileReader();
+        reader.onload = function(e) { resolve({ name: f.name, content: e.target.result, isImage: false }); };
+        reader.onerror = function() { resolve({ name: f.name, content: '', isImage: false }); };
+        reader.readAsText(f, 'utf-8');
+      });
+    });
+
+    Promise.all(readings).then(function(results) {
+      // 分离图片和文本文件
+      var hasImages = results.some(function(r) { return r.isImage; });
+      var textParts = results.filter(function(r) { return !r.isImage; }).map(function(r) {
+        var max = 5000;
+        var c = r.content.length > max ? r.content.substring(0, max) + '\n...(已截断)' : r.content;
+        return '=== 文件: ' + r.name + ' ===\n' + c;
+      });
+      var images = results.filter(function(r) { return r.isImage; });
+
+      self.callImportAI(textParts.join('\n\n'), key, result, images);
+    });
+  },
+
+  callImportAI: function(content, key, resultEl, images) {
+    var self = this;
+    var provider = document.getElementById('importProvider').value;
+
+    // 当前产品库概要（给 AI 做匹配参考）
+    var productList = this.data.products.map(function(p) {
+      return p.model + '(' + (p.productType || '') + ',' + (p.brand || '') + ')';
+    }).join(', ');
+
+    var prompt = '你是德邦胶水产品库的数据管理助手。请仔细分析上传的文件内容（可能是文本或图片），完成以下任务：\n\n' +
+      '1. 识别文件中涉及的所有产品型号（注意：一个文件可能包含多个产品的对比数据）\n' +
+      '2. 提取每个产品的结构化数据\n\n' +
+      '⚠️ 重要规则：\n' +
+      '- 如果是对比测试表格（如拉拔强度、剪切强度对比），表头中的每个产品型号都要单独识别\n' +
+      '- 产品型号格式通常为：数字开头（如160988NH）、Q开头（如QSA211-24）、或含字母数字组合\n' +
+      '- "(小样)" 表示小批量样品，型号为括号前的部分\n' +
+      '- 日期标注（如260402=2026.04.02）表示批次，不是型号的一部分\n' +
+      '- 测试条件（如24H、48H、65℃）和数值要完整提取\n' +
+      '- 注意区分：基材信息（如4430PC、1414T PC）是测试条件，不是产品型号\n\n' +
+      '当前产品库已有产品：\n' + productList + '\n\n' +
+      (content ? '文件文本内容：\n' + content + '\n\n' : '') +
+      '请严格按以下 JSON 格式输出（只输出 JSON，不要 markdown 代码块，不要任何说明文字）：\n' +
+      '{\n' +
+      '  "summary": "一句话说明：识别到哪些产品，包含哪类数据（如拉拔强度对比测试）",\n' +
+      '  "actions": [\n' +
+      '    {\n' +
+      '      "type": "update_fields",\n' +
+      '      "productModel": "产品型号（与产品库一致，或NEW标记新产品）",\n' +
+      '      "isNew": false,\n' +
+      '      "confidence": 0.95,\n' +
+      '      "fields": {\n' +
+      '        "viscosity": "粘度值（如有）",\n' +
+      '        "hardness": "硬度（如有）",\n' +
+      '        "tensileStrength": "拉伸强度（如有）",\n' +
+      '        "elongation": "断裂伸长率（如有）",\n' +
+      '        "specificGravity": "比重（如有）",\n' +
+      '        "tgValue": "Tg值（如有）",\n' +
+      '        "application": "应用（如有）",\n' +
+      '        "features": "特性（如有）",\n' +
+      '        "notes": "补充备注（如有）"\n' +
+      '      },\n' +
+      '      "testReport": {\n' +
+      '        "reportId": "报告编号（如TR-20260527-pullout）",\n' +
+      '        "date": "YYYY-MM-DD",\n' +
+      '        "type": "测试类型（如 Pull-out Strength / Shear Strength）",\n' +
+      '        "comparisonProducts": ["对比产品列表"],\n' +
+      '        "data": {\n' +
+      '          "测试项目名": {\n' +
+      '            "条件或子项": "值",\n' +
+      '            "unit": "单位"\n' +
+      '          }\n' +
+      '        }\n' +
+      '      }\n' +
+      '    }\n' +
+      '  ]\n' +
+      '}';
+
+    images = images || [];
+    var apiUrl = provider === 'claude'
+      ? 'https://api.anthropic.com/v1/messages'
+      : 'https://api.deepseek.com/v1/chat/completions';
+
+    // 构建消息内容（支持图片+文本混合）
+    var msgContent;
+    if (images.length > 0 && provider === 'claude') {
+      // Claude Vision: 发送图片+文本
+      msgContent = [];
+      images.forEach(function(img) {
+        var b64 = img.base64.split(',')[1] || img.base64;
+        msgContent.push({ type: 'image', source: { type: 'base64', media_type: img.mediaType, data: b64 }});
+      });
+      msgContent.push({ type: 'text', text: prompt });
+    } else if (images.length > 0 && provider !== 'claude') {
+      // DeepSeek 不支持图片，提示用户切换
+      resultEl.innerHTML = '<div style="padding:12px;background:#fef3c7;border-radius:var(--r);border:1px solid #fde68a;color:#92400e;font-size:.82rem">⚠️ 图片解析需要使用 Claude，请切换 AI 提供方后重试</div>';
+      return;
+    } else {
+      msgContent = prompt;
+    }
+
+    var headers, body;
+    if (provider === 'claude') {
+      headers = { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' };
+      body = { model: 'claude-sonnet-4-20250514', max_tokens: 4000, messages: [{ role: 'user', content: msgContent }] };
+    } else {
+      headers = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key };
+      body = { model: 'deepseek-chat', max_tokens: 4000, messages: [{ role: 'user', content: prompt }] };
+    }
+
+    fetch(apiUrl, { method: 'POST', headers: headers, body: JSON.stringify(body) })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var text = provider === 'claude'
+          ? (data.content && data.content[0] && data.content[0].text || '')
+          : (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || '');
+        if (!text) throw new Error('AI 返回内容为空，请检查 API Key');
+        // 清理可能的 markdown 包裹
+        text = text.replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'').trim();
+        var parsed;
+        try { parsed = JSON.parse(text); }
+        catch(e) {
+          // 尝试提取 JSON
+          var m = text.match(/\{[\s\S]*\}/);
+          if (m) parsed = JSON.parse(m[0]);
+          else throw new Error('AI 返回的不是有效 JSON');
+        }
+        self.showImportPreview(parsed, resultEl);
+      })
+      .catch(function(err) {
+        resultEl.innerHTML = '<div style="padding:12px;background:#fef2f2;border-radius:var(--r);border:1px solid #fecaca;color:#dc2626;font-size:.82rem">❌ 解析失败: ' + err.message + '</div>';
+      });
+  },
+
+  showImportPreview: function(parsed, resultEl) {
+    var self = this;
+    var actions = parsed.actions || [];
+    if (!actions.length) {
+      resultEl.innerHTML = '<div style="padding:12px;color:var(--ink4);font-size:.85rem">⚠️ AI 未识别到可导入的数据，请检查文件内容</div>';
+      return;
+    }
+
+    var h = '<div style="background:#fff;border-radius:var(--r);border:1px solid var(--bd);overflow:hidden">';
+    // 摘要
+    h += '<div style="padding:12px 14px;background:var(--sf);border-bottom:1px solid var(--bd);font-size:.82rem;color:var(--ink2)">🤖 ' + (parsed.summary || '解析完成') + '</div>';
+
+    // 每个 action 预览
+    actions.forEach(function(a, i) {
+      var prod = self.data.products.find(function(p) { return p.model === a.productModel || p.id === a.productModel; });
+      var isNew = a.isNew || !prod;
+      var conf = Math.round((a.confidence || 0.8) * 100);
+      var confColor = conf >= 90 ? 'var(--green)' : conf >= 70 ? 'var(--amber)' : '#ef4444';
+
+      h += '<div style="padding:12px 14px;border-bottom:1px solid var(--bd)" id="preview-' + i + '">';
+      h += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">';
+      h += '<span style="font-weight:700;font-size:.9rem;color:var(--brand)">' + a.productModel + '</span>';
+      if (isNew) h += '<span style="font-size:.7rem;background:#fef3c7;color:#d97706;padding:2px 7px;border-radius:10px;font-weight:600">NEW 新产品</span>';
+      else h += '<span style="font-size:.7rem;background:var(--bbg);color:var(--brand);padding:2px 7px;border-radius:10px">已有产品</span>';
+      h += '<span style="font-size:.72rem;color:' + confColor + ';margin-left:auto">识别置信度 ' + conf + '%</span>';
+      h += '</div>';
+
+      // 字段变更预览
+      var fields = a.fields || {};
+      var fieldNames = { viscosity:'粘度', hardness:'硬度', tensileStrength:'拉伸强度', elongation:'断裂伸长率', specificGravity:'比重', tgValue:'Tg', application:'应用', features:'特性', notes:'备注补充' };
+      var hasFields = Object.keys(fields).some(function(k) { return fields[k]; });
+      if (hasFields) {
+        h += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">';
+        Object.entries(fields).forEach(function(fe) {
+          if (!fe[1]) return;
+          var oldVal = prod ? (prod[fe[0]] || '') : '';
+          var isUpdate = oldVal && oldVal !== '-';
+          h += '<div style="font-size:.75rem;background:' + (isUpdate ? '#fef3c7' : '#f0fdf4') + ';border-radius:5px;padding:4px 8px">';
+          h += '<span style="color:var(--ink4)">' + (fieldNames[fe[0]] || fe[0]) + ': </span>';
+          if (isUpdate) h += '<span style="color:#92400e;text-decoration:line-through;margin-right:4px">' + oldVal.substring(0,20) + (oldVal.length>20?'…':'') + '</span>';
+          h += '<span style="color:' + (isUpdate ? '#b45309' : 'var(--green)') + '">' + String(fe[1]).substring(0,40) + (String(fe[1]).length>40?'…':'') + '</span>';
+          h += '</div>';
+        });
+        h += '</div>';
+      }
+
+      // 测试报告预览
+      if (a.testReport && a.testReport.reportId) {
+        h += '<div style="font-size:.75rem;background:var(--bbg);border-radius:5px;padding:4px 8px;margin-bottom:8px;color:var(--brand)">📊 新增测试报告: ' + a.testReport.reportId + ' (' + (a.testReport.date || '') + ')</div>';
+      }
+
+      // 操作按钮
+      h += '<div style="display:flex;gap:8px">';
+      h += '<button onclick="APP.applyImportAction(' + i + ')" style="padding:5px 14px;border-radius:5px;border:none;background:var(--green);color:#fff;font-size:.78rem;cursor:pointer;font-family:var(--f)">✓ 应用</button>';
+      h += '<button onclick="document.getElementById(\'preview-' + i + '\').style.opacity=.4" style="padding:5px 14px;border-radius:5px;border:1px solid var(--bd);background:none;color:var(--ink3);font-size:.78rem;cursor:pointer;font-family:var(--f)">✕ 跳过</button>';
+      h += '</div></div>';
+    });
+
+    h += '<div style="padding:10px 14px;display:flex;gap:8px;background:var(--sf)">';
+    h += '<button onclick="APP.applyAllImportActions()" style="padding:7px 18px;border-radius:var(--r);border:none;background:var(--green);color:#fff;font-weight:600;font-size:.82rem;cursor:pointer;font-family:var(--f)">✓ 全部应用</button>';
+    h += '<span style="font-size:.75rem;color:var(--ink4);align-self:center">应用后点击「同步到云端」保存</span>';
+    h += '<button id="syncBtn" onclick="APP.syncToGitHub()" style="margin-left:auto;padding:7px 18px;border-radius:var(--r);border:none;background:var(--brand);color:#fff;font-weight:600;font-size:.82rem;cursor:pointer;font-family:var(--f)">☁️ 同步到云端</button>' +
+    '<button onclick="APP.downloadDataJSON()" style="padding:7px 14px;border-radius:var(--r);border:1px solid var(--bd);background:none;color:var(--ink3);font-size:.82rem;cursor:pointer;font-family:var(--f);margin-left:6px">💾 下载</button>';
+    h += '</div></div>';
+
+    resultEl.innerHTML = h;
+    // 保存 actions 供后续操作
+    self._importActions = actions;
+  },
+
+  applyImportAction: function(i) {
+    var self = this;
+    var a = this._importActions && this._importActions[i];
+    if (!a) return;
+    this._doApply(a);
+    var el = document.getElementById('preview-' + i);
+    if (el) el.innerHTML = '<div style="padding:8px;color:var(--green);font-size:.82rem">✅ 已应用：' + a.productModel + '</div>';
+  },
+
+  applyAllImportActions: function() {
+    var self = this;
+    (this._importActions || []).forEach(function(a, i) {
+      self._doApply(a);
+      var el = document.getElementById('preview-' + i);
+      if (el) el.innerHTML = '<div style="padding:8px;color:var(--green);font-size:.82rem">✅ 已应用：' + a.productModel + '</div>';
+    });
+    this.render();
+    this.updateStats();
+  },
+
+  _doApply: function(a) {
+    var self = this;
+    var prod = this.data.products.find(function(p) { return p.model === a.productModel || p.id === a.productModel; });
+
+    // 新产品：创建骨架
+    if (!prod && a.isNew) {
+      prod = { id: a.productModel, model: a.productModel, productType: '-', materialPlatform: '-', chemistry: '未知', cureMethod: '待确定', brand: '-', isCompetitor: false, testReports: [], notes: '', lastUpdated: new Date().toISOString().slice(0,10) };
+      this.data.products.push(prod);
+      this.data.products.sort(function(x, y) { return x.model.localeCompare(y.model); });
+    }
+    if (!prod) return;
+
+    // 更新字段（空值跳过；notes 追加而不覆盖）
+    var fields = a.fields || {};
+    Object.entries(fields).forEach(function(fe) {
+      if (!fe[1]) return;
+      if (fe[0] === 'notes') {
+        prod.notes = (prod.notes ? prod.notes + '\n\n' : '') + fe[1];
+      } else {
+        // 只在原值为空或"-"时更新，避免覆盖 Notion 数据
+        if (!prod[fe[0]] || prod[fe[0]] === '-') prod[fe[0]] = fe[1];
+      }
+    });
+
+    // 追加测试报告
+    if (a.testReport && a.testReport.reportId) {
+      if (!prod.testReports) prod.testReports = [];
+      var exists = prod.testReports.find(function(r) { return r.reportId === a.testReport.reportId; });
+      if (!exists) {
+        prod.testReports.push(a.testReport);
+      }
+    }
+
+    prod.lastUpdated = new Date().toISOString().slice(0,10);
+  },
+
+
+  closeSub: function() { document.getElementById('subPage').classList.remove('open'); document.body.style.overflow = ''; this.curProd = null; },
+  toggleCompare: function(id) { var i = this.cmpList.indexOf(id); if (i >= 0) this.cmpList.splice(i, 1); else if (this.cmpList.length < 5) this.cmpList.push(id); this.updateCmpBar(); this.render(); },
+  togCmpDetail: function() { if (!this.curProd) return; this.toggleCompare(this.curProd.id); var b = document.getElementById('spCB'); if (b) { var is2 = this.cmpList.includes(this.curProd.id); b.textContent = is2 ? '已加入对比' : '加入对比'; b.disabled = is2; } },
+  updateCmpBar: function() { var bar = document.getElementById('compareBar'), n = this.cmpList.length; bar.classList.toggle('show', n > 0); document.getElementById('compareBarText').innerHTML = '已选 <b>' + n + '</b> 款（最多5款）'; },
+  clearCompare: function() { this.cmpList = []; this.updateCmpBar(); this.render(); },
+  openCompare: function() {
+    if (this.cmpList.length < 2) { alert('请至少选择2款产品进行对比'); return; }
+    var prods = this.cmpList.map(function(id) { return APP.data.products.find(function(p) { return p.id === id; }); }).filter(Boolean);
+    var fields = [['产品类型','displayType'],['化学体系','chemistry'],['固化方式','cureMethod'],['硬度','hardness'],['拉伸强度','tensileStrength'],['断裂伸长率','elongation'],['粘度','viscosity'],['比重','specificGravity'],['剪切强度','shearStrength'],['Tg','tgValue'],['模量','modulus'],['应用','application']];
+    var h = '<div style="overflow-x:auto"><table class="ct"><thead><tr><th></th>' + prods.map(function(p) { return '<th style="font-family:var(--mono);color:var(--brand);font-size:.85rem">' + esc(p.model) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    fields.forEach(function(f) { h += '<tr><td class="rl">' + esc(f[0]) + '</td>' + prods.map(function(p) { return '<td>' + esc(p[f[1]] || '-') + '</td>'; }).join('') + '</tr>'; });
+    h += '</tbody></table></div>';
+    document.getElementById('compareBody').innerHTML = h; document.getElementById('compareModal').classList.add('open');
+  },
+  closeCompare: function() { document.getElementById('compareModal').classList.remove('open'); },
+  clearFilters: function() {
+    this.filters = { search: '', type: '', chem: '', cure: '', compOnly: false };
+    document.getElementById('searchInput').value = ''; document.getElementById('searchClear').classList.remove('show');
+    document.getElementById('chipComp').classList.remove('on');
+    document.querySelectorAll('#filterBar .chip').forEach(function(c) { var isAll = (c.dataset.type === '' || c.dataset.chem === '' || c.dataset.cure === ''); c.classList.toggle('on', isAll); });
+    this.render();
+  },
+  renderProjects: function() {
+    var pjs = this.getProjData(), c = document.getElementById('projectList');
+    c.innerHTML = '<div style="padding:12px 0"><h2 style="font-size:1.1rem;font-weight:700;margin-bottom:4px">\ud83d\udcc1 项目管理</h2><p style="font-size:.78rem;color:var(--ink3)">' + pjs.length + ' 个进行中的项目</p></div>' +
+      pjs.map(function(pj) { return '<div class="pjc" onclick="APP.showProj(\'' + pj.id + '\')"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span class="pjn">' + esc(pj.name) + '</span><span class="pjsb ' + (pj.stage.includes('验证') ? 'sv' : 'sd') + '">' + esc(pj.stage) + '</span></div><div class="pjcu">\ud83c\udfe2 ' + esc(pj.customer) + ' \u00b7 PM: ' + esc(pj.pm) + '</div><div class="pjs">' + esc(pj.summary) + '</div><div class="pjm"><span>\ud83d\udcc5 ' + esc(pj.startDate) + '</span><span>\ud83d\udce6 ' + pj.relatedProducts.length + ' 款关联胶水</span></div></div>'; }).join('');
+  },
+  showProj: function(id) {
+    var self = this; var pj = this.getProjData().find(function(p) { return p.id === id; }); if (!pj) return;
+    document.getElementById('spTitle').textContent = pj.name;
+    var html = '<div class="ds"><div style="display:flex;gap:12px;flex-wrap:wrap;font-size:.82rem;color:var(--ink3)"><span>\ud83d\udcc5 ' + esc(pj.startDate) + '</span><span>\ud83d\udc64 PM: ' + esc(pj.pm) + '</span><span>\ud83c\udfe2 ' + esc(pj.customer) + '</span><span class="pjsb ' + (pj.stage.includes('验证') ? 'sv' : 'sd') + '">' + esc(pj.stage) + '</span></div></div>' +
+      mkColl('dri-' + pj.id, '\ud83d\udc64 DRI', '<div style="display:flex;flex-wrap:wrap;gap:8px">' + pj.dri.map(function(d) { return '<div style="flex:1;min-width:140px;padding:10px;background:var(--sf);border-radius:var(--r)"><div style="font-weight:600;font-size:.88rem">' + esc(d.name) + '</div><div style="font-size:.75rem;color:var(--ink3)">' + esc(d.task) + '</div></div>'; }).join('') + '</div>', true) +
+      mkColl('sub-' + pj.id, '\ud83d\udd27 子项目', pj.subProjects.map(function(sp) { return '<div style="border-left:3px solid var(--accent);padding:10px 14px;margin-bottom:8px;background:var(--sf);border-radius:0 var(--r) var(--r) 0"><div style="font-weight:600;font-size:.88rem">' + esc(sp.name) + '</div><div style="font-size:.75rem;color:var(--ink3)">' + esc(sp.desc) + '</div><ul style="margin-top:6px;padding-left:16px;font-size:.82rem;line-height:1.8">' + sp.details.map(function(d) { return '<li>' + esc(d) + '</li>'; }).join('') + '</ul></div>'; }).join('')) +
+      mkColl('ctq-' + pj.id, '\u2b50 客户关键要求（CTQ）', '<table class="trtb"><thead><tr><th>项目</th><th>规格/条件</th></tr></thead><tbody>' + pj.customerRequirements.map(function(cr) { return '<tr><td style="font-weight:500;color:var(--brand);white-space:nowrap">' + esc(cr.req) + '</td><td>' + esc(cr.spec) + '</td></tr>'; }).join('') + '</tbody></table>') +
+      mkColl('mat-' + pj.id, '\ud83d\udd29 关键基材', '<div style="display:flex;flex-wrap:wrap;gap:8px">' + pj.materials.map(function(m) { return '<div style="flex:1;min-width:120px;padding:10px;background:var(--sf);border-radius:var(--r)"><div style="font-weight:600">' + esc(m.name) + '</div><div style="font-size:.75rem;color:var(--ink3)">' + esc(m.spec) + '</div></div>'; }).join('') + '</div>') +
+      mkColl('rp-' + pj.id, '\ud83d\udce6 关联胶水', '<div style="display:flex;flex-wrap:wrap;gap:6px">' + pj.relatedProducts.map(function(pid) { var prod = self.data.products.find(function(pp) { return pp.model === pid || pp.id === pid; }); return '<span style="padding:5px 12px;border-radius:20px;font-size:.82rem;cursor:' + (prod ? 'pointer' : 'default') + ';background:' + (prod ? 'var(--bbg)' : 'var(--sf)') + ';color:' + (prod ? 'var(--brand)' : 'var(--ink4)') + '" ' + (prod ? 'onclick="APP.closeSub();setTimeout(function(){APP.showDetail(\'' + esc(prod.id) + '\')},350)"' : '') + '>' + esc(pid) + ' ' + (prod ? '\u2713' : '(未入库)') + '</span>'; }).join('') + '</div>') +
+      mkColl('pend-' + pj.id, '\u2753 待确认事项', '<div style="display:flex;flex-direction:column;gap:6px">' + pj.pendingItems.map(function(pi) { return '<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--sf);border-radius:var(--r)"><span style="background:var(--amber);color:#fff;font-size:.68rem;padding:2px 8px;border-radius:10px;white-space:nowrap">' + esc(pi.status) + '</span><span style="font-size:.82rem">' + esc(pi.item) + '</span></div>'; }).join('') + '</div>');
+    document.getElementById('spBody').innerHTML = html;
+    document.getElementById('subPage').classList.add('open'); document.body.style.overflow = 'hidden';
+  },
+  getProjData: function() { return [
+    { id:'gds25-wds', name:'GDS25-WDS 胶水开发', customer:'STC (Weiyong)', pm:'秦浩', stage:'验证阶段', startDate:'2025-11', summary:'GDS25 camera module WDS station adhesive — 主推QEP667-3 (BOS-DA)',
+      dri:[{name:'秦浩',task:'客户对接/项目管理'},{name:'张重阳',task:'CTQ测试'},{name:'吴峰',task:'配方优化'}],
+      subProjects:[{name:'QEP667-3 CTQ验证',desc:'WDS station epoxy qualification',details:['Warpage testing per GDS25 spec','Interface adhesion (LCP/PPA-Ceramic)','PCT/HTHH/TC reliability','Snap-cure profile optimization']},{name:'QUV636 WAA-H 数据补充',desc:'WAA-H station UV adhesive data',details:['UV cure profile validation','Adhesion retention after aging','Outgassing < 1%']}],
+      customerRequirements:[{req:'Warpage',spec:'convex \u226410um, concave \u226410um (150\u00b0C\u219225\u00b0C)'},{req:'Interface Adhesion',spec:'LCP-Ceramic / PPA-Ceramic / Ni-PC'},{req:'Reflectance',spec:'\u22640.5% change (80\u00b0C 9h)'},{req:'PCT',spec:'121\u00b0C, 2atm, 100%RH'},{req:'HTHH',spec:'85\u00b0C/85%RH'},{req:'TC',spec:'-40\u00b0C~85\u00b0C (20min ramp, ~1h/cycle)'}],
+      materials:[{name:'PPA',spec:'7650, 1855 (STC\u63d0\u4f9b)'},{name:'LCP',spec:'E5320T'},{name:'Glass',spec:'Schott D263T \u787b\u7845\u9178\u76d0 (0.7/1.1mm)'}],
+      relatedProducts:['QEP667-3','QUV636','QCA736H-5','QUV634M-1'],
+      pendingItems:[{item:'\u4e0d\u540c\u6279\u6b21\u4f38\u957f\u7387\u5dee\u5f02\u5927',status:'\u5f85\u5206\u6790'},{item:'\u62c9\u4f38\u8bd5\u9a8c\u65b9\u6cd5\uff1a\u5c0f\u54d1\u94c3 vs ASTM D638',status:'\u5f85\u786e\u8ba4'},{item:'Plasma\u5dee\u5f02\uff1a\u5ba2\u623710s vs \u6211\u4eec10min',status:'\u5f85\u5bf9\u6bd4'}]},
+    { id:'gds25-aaa', name:'GDS25-AAA UV\u80f6\u5f00\u53d1', customer:'STC (Weiyong)', pm:'秦浩', stage:'\u5f00\u53d1\u9636\u6bb5', startDate:'2026-01', summary:'GDS25 camera module AAA station UV adhesive development',
+      dri:[{name:'秦浩',task:'\u5ba2\u6237\u5bf9\u63a5'},{name:'\u84dd\u946b',task:'\u914d\u65b9\u5f00\u53d1'}],
+      subProjects:[{name:'QUV\u7cfb\u5217 AAA adhesive screening',desc:'AAA\u7ad9UV\u80f6\u7b5b\u9009',details:['Reflectance < 0.5% change','Interface adhesion on new substrates','Outgas spec compliance']}],
+      customerRequirements:[{req:'Interface Adhesion',spec:'GDS23-AAA-2 bondline'},{req:'Reflectance',spec:'\u22640.5% change'},{req:'Outgassing',spec:'< 1%'}],
+      materials:[{name:'PPA',spec:'7650'},{name:'LCP',spec:'E5320T'}],
+      relatedProducts:['QUV636','QUV634M-1'],
+      pendingItems:[{item:'LCP\u5f00\u7a97\u6837\u4ef6\u9700\u6ce8\u5851',status:'\u5f85\u5b89\u6392'}]}
+  ]; },
+  restoreKey: function() { try { var k = localStorage.getItem('db_ai_key') || ''; var p = localStorage.getItem('db_ai_provider') || 'deepseek'; document.getElementById('aiKey').value = k; document.getElementById('aiProvider').value = p; document.getElementById('importKey').value = k; document.getElementById('importProvider').value = p; } catch(e) {} },
+  saveKey: function() { try { var k = document.getElementById('aiKey').value || document.getElementById('importKey').value; var p = document.getElementById('aiProvider').value; localStorage.setItem('db_ai_key', k); localStorage.setItem('db_ai_provider', p); if (k) { document.getElementById('importKey').value = k; document.getElementById('aiKey').value = k; } } catch(e) {} },
+};
+
+function doAIRecommend() {
+  var input = document.getElementById('aiInput').value.trim(); if (!input) return;
+  var apiKey = document.getElementById('aiKey').value.trim();
+  if (!apiKey) { alert('请先输入 API Key'); return; }
+  APP.saveKey();
+  var provider = document.getElementById('aiProvider').value;
+  var re = document.getElementById('aiResult'), sb = document.getElementById('aiSubmit');
+  sb.disabled = true; re.innerHTML = '<span class="aild">\u23f3 正在分析产品库并匹配需求\u2026</span>'; re.style.display = 'block';
+  var summary = APP.data.products.map(function(p) {
+    var parts = [p.model];
+    if (p.displayType && p.displayType !== '未分类') parts.push(p.displayType);
+    if (p.chemistry && p.chemistry !== '未知' && p.chemistry !== '-') parts.push(p.chemistry);
+    if (p.cureMethod && p.cureMethod !== '待确定' && p.cureMethod !== '-') parts.push(p.cureMethod);
+    if (p.viscosity) parts.push('\u7c98\u5ea6:' + exN(p.viscosity)); if (p.hardness) parts.push('\u786c\u5ea6:' + exN(p.hardness));
+    if (p.tensileStrength) parts.push('\u62c9\u4f38:' + exN(p.tensileStrength) + 'MPa'); if (p.elongation) parts.push('\u4f38\u957f:' + exN(p.elongation) + '%');
+    if (p.tgValue) parts.push('Tg:' + exN(p.tgValue)); if (p.modulus) parts.push('\u6a21\u91cf:' + p.modulus);
+    if (p.application && p.application !== '-') parts.push(p.application.substring(0, 80));
+    if (p.features && p.features !== '-') parts.push(p.features.substring(0, 80));
+    if (p.isCompetitor) parts.push('[\u7ade\u54c1]');
+    return parts.join(' | ');
+  }).join('\n');
+  var sys = '\u4f60\u662f\u5fb7\u90a6\u79d1\u6280\u7684\u80f6\u6c34\u4ea7\u54c1\u6280\u672f\u987e\u95ee\u3002\u4ee5\u4e0b\u662f\u5b8c\u6574\u7684\u80f6\u6c34\u4ea7\u54c1\u5e93\u6570\u636e\uff08\u6bcf\u884c\u4e00\u4e2a\u4ea7\u54c1\uff0c\u5b57\u6bb5\u7528|\u5206\u9694\uff09\uff1a\n\n' + summary + '\n\n\u6839\u636e\u7528\u6237\u63cf\u8ff0\u7684\u9700\u6c42\u573a\u666f\uff0c\u4ece\u4ea7\u54c1\u5e93\u4e2d\u63a8\u8350\u6700\u5339\u914d\u7684\u4ea7\u54c1\uff08\u6700\u591a5\u6b3e\uff09\uff0c\u5e76\u7ed9\u51fa\u63a8\u8350\u7406\u7531\u30021.\u5206\u6790\u5ba2\u6237\u9700\u6c42\u5173\u952e\u6307\u6807 2.\u6309\u5339\u914d\u5ea6\u5217\u51fa\u63a8\u8350\u4ea7\u54c1 3.\u8bf4\u660e\u5dee\u8ddd 4.\u4e2d\u6587\u56de\u7b54';
+  var url = provider === 'claude' ? 'https://api.anthropic.com/v1/messages' : 'https://api.deepseek.com/chat/completions';
+  var headers, body;
+  if (provider === 'claude') {
+    headers = { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' };
+    body = JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 2000, system: sys, messages: [{ role: 'user', content: input }] });
+  } else {
+    headers = { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + apiKey };
+    body = JSON.stringify({ model: 'deepseek-chat', max_tokens: 2000, messages: [{ role: 'system', content: sys }, { role: 'user', content: input }] });
+  }
+  fetch(url, { method: 'POST', headers: headers, body: body }).then(function(resp) { return resp.json(); }).then(function(data) {
+    var text = '';
+    if (provider === 'claude') text = (data.content || []).map(function(c) { return c.text || ''; }).join('');
+    else text = (data.choices && data.choices[0] && data.choices[0].message) ? data.choices[0].message.content : '';
+    if (!text) text = '\u672a\u83b7\u53d6\u5230\u6709\u6548\u54cd\u5e94\uff0c\u8bf7\u68c0\u67e5 API Key\u3002';
+    re.innerHTML = esc(text);
+    sb.disabled = false;
+  }).catch(function(err) { re.innerHTML = '<span style="color:var(--red)">\u8bf7\u6c42\u5931\u8d25\uff1a' + esc(err.message) + '</span>'; sb.disabled = false; });
+}
+
+// APP.init() is called by data.json fetch loader
+
+</script>
+</div><!-- /mainApp -->
+</body>
+</html>
